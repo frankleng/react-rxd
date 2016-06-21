@@ -1,0 +1,12 @@
+machine:
+  environment:
+    CONTINUOUS_INTEGRATION: true
+    REPORT_OUPUT_DIR: $CIRCLE_TEST_REPORTS
+  node:
+    version: 6.2.2
+test:
+  override:
+    - mkdir -p $CIRCLE_TEST_REPORTS/eslint
+    - npm run lint-ci
+    - mkdir -p $CIRCLE_TEST_REPORTS/karma
+    - npm test

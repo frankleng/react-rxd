@@ -1,0 +1,112 @@
+//Base colors
+$primary-color: #4abbf3;
+$grey: #979797;
+$success-color: #89d5ac;
+$warning-color: #f1e544;
+$danger-color: #e33e3e;
+
+//basic
+$white: #fff;
+$black: #000;
+
+// Colors
+//primary
+$primary-color-dark-20: darken($primary-color, 20%);
+$primary-color-dark-40: darken($primary-color, 40%);
+$primary-color-dark-60: darken($primary-color, 60%);
+$primary-color-dark-80: darken($primary-color, 80%);
+$primary-color-dark-100: darken($primary-color, 100%);
+
+$primary-color-light-20: lighten($primary-color, 20%);
+$primary-color-light-40: lighten($primary-color, 40%);
+$primary-color-light-60: lighten($primary-color, 60%);
+$primary-color-light-80: lighten($primary-color, 80%);
+$primary-color-light-100: lighten($primary-color, 100%);
+
+//grey
+$grey-dark-20: darken($grey, 20%);
+$grey-dark-40: darken($grey, 40%);
+$grey-dark-60: darken($grey, 60%);
+$grey-dark-80: darken($grey, 80%);
+$grey-dark-100: darken($grey, 100%);
+
+$grey-light-20: lighten($grey, 20%);
+$grey-light-40: lighten($grey, 40%);
+$grey-light-60: lighten($grey, 60%);
+$grey-light-80: lighten($grey, 80%);
+$grey-light-100: lighten($grey, 100%);
+
+//success
+$success-color-dark-20: darken($success-color, 20%);
+$success-color-dark-40: darken($success-color, 40%);
+$success-color-dark-60: darken($success-color, 60%);
+$success-color-dark-80: darken($success-color, 80%);
+$success-color-dark-100: darken($success-color, 100%);
+
+$success-color-light-20: lighten($success-color, 20%);
+$success-color-light-40: lighten($success-color, 40%);
+$success-color-light-60: lighten($success-color, 60%);
+$success-color-light-80: lighten($success-color, 80%);
+$success-color-light-100: lighten($success-color, 100%);
+
+//warning
+$warning-color-dark-20: darken($warning-color, 20%);
+$warning-color-dark-40: darken($warning-color, 40%);
+$warning-color-dark-60: darken($warning-color, 60%);
+$warning-color-dark-80: darken($warning-color, 80%);
+$warning-color-dark-100: darken($warning-color, 100%);
+
+$warning-color-light-20: lighten($warning-color, 20%);
+$warning-color-light-40: lighten($warning-color, 40%);
+$warning-color-light-60: lighten($warning-color, 60%);
+$warning-color-light-80: lighten($warning-color, 80%);
+$warning-color-light-100: lighten($warning-color, 100%);
+
+//danger
+$danger-color-dark-20: darken($danger-color, 20%);
+$danger-color-dark-40: darken($danger-color, 40%);
+$danger-color-dark-60: darken($danger-color, 60%);
+$danger-color-dark-80: darken($danger-color, 80%);
+$danger-color-dark-100: darken($danger-color, 100%);
+
+$danger-color-light-20: lighten($danger-color, 20%);
+$danger-color-light-40: lighten($danger-color, 40%);
+$danger-color-light-60: lighten($danger-color, 60%);
+$danger-color-light-80: lighten($danger-color, 80%);
+$danger-color-light-100: lighten($danger-color, 100%);
+
+//FORM
+$select-focus: $primary-color;
+$button-background-focus: lighten($primary-color, 4%) !default;
+
+//TEXT RELATE VARIABLES
+
+//BASE TEXT COLORS
+$base-font-color: $grey-dark-80;
+$base-link-color: $primary-color;
+
+//FONT STACK
+$font-stack: 'OpenSans', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Helvetica Neue', 'Droid Sans', Helvetica, Arial, sans-serif;
+$base-font-family: $font-stack;
+$header-font-family: $font-stack;
+
+//FONT SIZES
+$base-font-size: 14px;
+$h1-font-size: 38px;
+$h2-font-size: 27px;
+$h3-font-size: 20px;
+$h4-font-size: 14px;
+$h5-font-size: 14px;
+$h6-font-size: 12px;
+$small-font-size: 12px;
+$tiny-font-size: 10px;
+
+//LINE HEIGHTS
+$base-line-height: 1.5;
+$header-line-height: 1.35;
+
+//FONT WEIGHT SCALE
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-xbold: 800;

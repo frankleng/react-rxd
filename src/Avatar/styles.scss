@@ -1,0 +1,118 @@
+@import '../common';
+
+.avatar {
+  background-color: $grey-light-40;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 4px 0 $grey;
+  color: $grey-light-100;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: .025em;
+  overflow: hidden;
+  text-align: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  height: 40px;
+  width: 40px;
+  font-size: 14px;
+  line-height: 40px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+
+  > img {
+    width: 100%;
+  }
+}
+
+.medium, .large, .xlarge {
+  font-weight: 400;
+}
+.xsmall {
+  height: 30px;
+  width: 30px;
+  font-size: 12px;
+  line-height: 30px;
+}
+.medium {
+  height: 50px;
+  width: 50px;
+  font-size: 18px;
+  line-height: 50px;
+}
+.large {
+  height: 60px;
+  width: 60px;
+  font-size: 20px;
+  line-height: 60px;
+}
+.xlarge {
+  height: 80px;
+  width: 80px;
+  font-size: 24px;
+  line-height: 80px;
+}
+.square {
+  border-radius: 3px;
+}
+
+.avatar-block {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+}
+
+.avatar-block-avatar {
+  -webkit-flex-shrink: 0;
+  -moz-flex-shrink: 0;
+  flex-shrink: 0;
+  -ms-flex-negative: 0;
+  margin-right: 10px;
+}
+
+.avatar-block-nameholder {
+  color: inherit;
+  > {
+    :global(.name) {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 1px;
+    }
+    :global(.role) {
+      display: block;
+    }
+  }
+}

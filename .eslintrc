@@ -1,0 +1,26 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "rules": {
+    "global-require": 0,
+    "max-len": 0,
+    "no-var": 0,
+    "curly": [2, "multi-or-nest"],
+    "react/no-multi-comp": 0,
+    "import/default": 0,
+    "import/no-duplicates": 0,
+    "import/named": 0,
+    "import/namespace": 0,
+    "import/no-unresolved": 0,
+    "comma-dangle": ["error", "never"]
+  },
+  "settings": {
+    "import/resolve": {
+      "moduleDirectory": ["node_modules", "src"]
+    }
+  }
+}

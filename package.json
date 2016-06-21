@@ -6,13 +6,18 @@
     "url": "git@github.com:Realstax/react-rxd.git"
   },
   "scripts": {
-    "build": "webpack -p",
-    "pre-commit": "npm run build"
+    "build": "webpack",
+    "lint": "eslint --fix --config .eslintrc src",
+    "lint-ci": "eslint -c .eslintrc src -f junit -o $CIRCLE_TEST_REPORTS/eslint/report.xml",
+    "prepush": "npm run lint && npm test",
+    "postinstall": "npm run build",
+    "test": "karma start --single-run",
+    "watch-test": "karma start"
   },
-  "main": "dist",
+  "main": "dist/index.js",
   "license": "MIT",
-  "version": "0.0.1",
-  "devDependencies": {
+  "version": "0.0.2",
+  "dependencies": {
     "autoprefixer": "^6.3.6",
     "babel": "^6.5.2",
     "babel-core": "^6.9.1",
@@ -27,7 +32,6 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "foundation-sites": "^6.2.3",
-    "husky": "^0.11.4",
     "jsontosass-loader": "^0.1.8",
     "postcss-loader": "^0.9.1",
     "react": "^15.1.0",
@@ -36,5 +40,26 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.9.2",
+    "eslint-plugin-jsx-a11y": "^1.5.3",
+    "eslint-plugin-react": "^5.2.2",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "husky": "^0.11.4",
+    "imports-loader": "^0.6.5",
+    "karma": "^0.13.22",
+    "karma-cli": "^1.0.0",
+    "karma-junit-reporter": "^1.0.0",
+    "karma-mocha": "^1.0.1",
+    "karma-mocha-reporter": "^2.0.4",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.7.0",
+    "mocha": "^2.5.3",
+    "phantomjs-prebuilt": "^2.1.7"
   }
 }

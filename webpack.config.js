@@ -3,15 +3,23 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
-const themePath = path.join(__dirname, 'theme.json');
-
 module.exports = {
+  devtool: 'source-map',
+
   entry: path.join(__dirname, 'src/index.js'),
 
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'index.js',
     publicPath: '/'
+  },
+
+  resolve: {
+    modulesDirectories: [
+      'src',
+      'node_modules'
+    ],
+    extensions: ['', '.json', '.js']
   },
 
   plugins: [
@@ -21,7 +29,6 @@ module.exports = {
     new ExtractTextPlugin('rxd.css'),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin(),
     new webpack.optimize.AggressiveMergingPlugin()
   ],
 
@@ -47,6 +54,10 @@ module.exports = {
   module: {
     loaders: [
       {
+        test: /\.(jpe?g|png|gif|svg)$/,
+        loader: 'url'
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel'
@@ -55,7 +66,7 @@ module.exports = {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract(
           'style',
-          `css?modules!postcss!sass!jsontosass?path=${themePath}`
+          'css?modules!postcss!sass'
         )
       }
     ]
