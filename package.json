@@ -16,7 +16,7 @@
   },
   "main": "dist/index.js",
   "license": "MIT",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "dependencies": {
     "autoprefixer": "^6.3.6",
     "babel": "^6.5.2",
@@ -32,6 +32,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "foundation-sites": "^6.2.3",
+    "json-loader": "^0.5.4",
     "jsontosass-loader": "^0.1.8",
     "node-sass": "^3.8.0",
     "postcss-loader": "^0.9.1",
@@ -44,6 +45,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "enzyme": "^2.3.0",
     "eslint": "^2.13.1",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-plugin-import": "^1.9.2",
@@ -51,7 +53,6 @@
     "eslint-plugin-react": "^5.2.2",
     "extract-text-webpack-plugin": "^1.0.1",
     "husky": "^0.11.4",
-    "imports-loader": "^0.6.5",
     "karma": "^0.13.22",
     "karma-cli": "^1.0.0",
     "karma-junit-reporter": "^1.0.0",
@@ -61,6 +62,9 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.7.0",
     "mocha": "^2.5.3",
-    "phantomjs-prebuilt": "^2.1.7"
+    "phantomjs-prebuilt": "^2.1.7",
+    "react-addons-test-utils": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "sinon": "^1.17.4"
   }
 }

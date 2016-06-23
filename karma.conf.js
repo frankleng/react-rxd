@@ -39,12 +39,27 @@ module.exports = (config) => {
 
     webpack: {
       devtool: 'inline-source-map',
-      module: webpackConfig.module,
-      resolve: webpackConfig.resolve,
+      module: {
+        noParse: [
+          /node_modules\/sinon\//
+        ],
+        loaders: webpackConfig.module.loaders
+      },
+      resolve: Object.assign({}, webpackConfig.resolve, {
+        alias: {
+          sinon: 'sinon/pkg/sinon'
+        }
+      }),
       plugins: [
-        new ExtractTextPlugin('rxd.css'),
-        new webpack.IgnorePlugin(/\.json$/)
-      ]
+        new ExtractTextPlugin('rxd.css')
+      ],
+      externals: {
+        jsdom: 'window',
+        'react/lib/ExecutionEnvironment': true,
+        'react/lib/ReactContext': 'window',
+        'text-encoding': 'window',
+        'react/addons': true
+      }
     },
 
     webpackServer: {
