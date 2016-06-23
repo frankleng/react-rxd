@@ -58,6 +58,10 @@ module.exports = {
         loader: 'url'
       },
       {
+        test: /\.json$/,
+        loader: 'json'
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel'
