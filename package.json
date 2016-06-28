@@ -31,6 +31,7 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "bourbon": "^4.2.7",
+    "cpy-cli": "^1.0.1",
     "css-loader": "^0.23.1",
     "foundation-sites": "^6.2.3",
     "json-loader": "^0.5.4",
@@ -46,7 +47,6 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "cpy-cli": "^1.0.1",
     "enzyme": "^2.3.0",
     "eslint": "^2.13.1",
     "eslint-config-airbnb": "^9.0.1",
