@@ -3,3 +3,4 @@ tests.webpack.js
 webpack.config.js
 dist/**
 node_modules/**
+lib/**
