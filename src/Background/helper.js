@@ -1,7 +1,7 @@
 /**
  * Created by frank on 6/22/16.
  */
-import styles from './styles.scss';
+import styles from './Background.scss';
 
 export { styles };
 

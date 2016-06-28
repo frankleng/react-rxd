@@ -1,4 +1,4 @@
-import styles from './styles.scss';
+import styles from './Avatar.scss';
 
 export { styles };
 
@@ -17,7 +17,7 @@ export function getAvatarClassnameFromProps(props) {
 
 /**
  * @param children
- * @returns {number}
+ * @returns {string}
  */
 export function getBaseClassName(children) {
   return Array.isArray(children) ? styles['avatar-block'] : styles.avatar;

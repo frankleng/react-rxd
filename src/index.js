@@ -5,6 +5,7 @@ import Avatar from './Avatar';
 import Background from './Background';
 import Float from './Float';
 import Grid from './Grid';
+import Input from './Input';
 import Visibility from './Visibility';
 
 export default {
@@ -12,5 +13,6 @@ export default {
   Background,
   Float,
   Grid,
+  Input,
   Visibility
 };

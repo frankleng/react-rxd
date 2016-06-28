@@ -1,13 +1,13 @@
 //Base colors
 $primary-color: #4abbf3;
-$grey: #979797;
 $success-color: #89d5ac;
-$warning-color: #f1e544;
+$warning-color: #ffe21b;
 $danger-color: #e33e3e;
 
 //basic
 $white: #fff;
 $black: #000;
+$grey: #979797;
 
 // Colors
 //primary
@@ -110,3 +110,105 @@ $font-weight-regular: 400;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
 $font-weight-xbold: 800;
+
+//Break Points
+
+$xsmall:                    em(320px);
+$small:                     em(640px);
+$normal:                    em(960px);
+$medium:                    em(1024px);
+$large:                     em(1440px);
+$xlarge:                    em(1920px);
+
+//Border Radii
+$base-border-radius:        3px;
+$round-border-radius:       50%;
+
+//Spacing
+$base-spacing:              30px;
+$base-padding:              20px;
+
+//Border
+$base-border-color:         $grey-light-80;
+$base-border:               1px solid $base-border-color;
+$quote-border-left:         $primary-color;
+
+//Icon Stack
+$icon-stack:'Stax-Iconset';
+
+//Form
+$input-hover-bg:            rgba($primary-color, .02);
+$input-success-shadow:      rgba($success-color, .5);
+
+// Text Inputs + Textarea
+$input-height: 3rem !default;
+$input-border-color: color("grey", "base") !default;
+$input-border: 1px solid $input-border-color !default;
+$input-background: $white !default;
+$input-error-color: $danger-color !default;
+$input-success-color: $success-color !default;
+$input-focus-color: $primary-color !default;
+$input-font-size: 1rem !default;
+$input-margin: 0 0 15px 0 !default;
+$input-padding: 0 !default;
+$input-transition: all .3s;
+$label-font-size: .8rem !default;
+$input-disabled-color: rgba(0,0,0, .26) !default;
+$input-disabled-solid-color: #BDBDBD !default;
+$input-disabled-border: 1px dotted $input-disabled-color !default;
+$input-invalid-border: 1px solid $input-error-color !default;
+$placeholder-text-color: $grey-light-80 !default;
+
+// Radio Buttons
+$radio-fill-color: $primary-color !default;
+$radio-empty-color: #5a5a5a !default;
+$radio-border: 2px solid $radio-fill-color !default;
+
+// Range
+$range-height: 14px !default;
+$range-width: 14px !default;
+$track-height: 3px !default;
+
+// Select
+$select-border: 1px solid #f2f2f2 !default;
+$select-background: rgba(255, 255, 255, 0.90) !default;
+$select-focus: 1px solid lighten($primary-color, 47%) !default;
+$select-padding: 5px !default;
+$select-radius: 2px !default;
+$select-disabled-color: rgba(0,0,0,.3) !default;
+
+// Switches
+$switch-bg-color: $primary-color !default;
+$switch-checked-lever-bg: desaturate(lighten($primary-color, 25%), 25%) !default;
+$switch-unchecked-bg: #F1F1F1 !default;
+$switch-unchecked-lever-bg: #818181 !default;
+$switch-radius: 15px !default;
+
+//Dropdown
+$dropdown-bg-color: $white !default;
+$dropdown-hover-bg-color: #eee !default;
+$dropdown-color: $primary-color !default;
+$dropdown-item-height: 50px !default;
+
+
+//Card
+$card-border-color: 		$base-border-color;
+$card-border: 				1px solid $card-border-color;
+
+//Grid
+$gutter-width: 1.5rem !default;
+
+
+// Media Query Ranges
+$small-screen-up: 601px !default;
+$medium-screen-up: 993px !default;
+$large-screen-up: 1201px !default;
+$small-screen: 600px !default;
+$medium-screen: 992px !default;
+$large-screen: 1200px !default;
+
+$medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
+$large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
+$small-and-down: "only screen and (max-width : #{$small-screen})" !default;
+$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
+$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
