@@ -1,8 +1,7 @@
 /**
  * Created by frank on 6/23/16.
  */
-import styles from './Input.scss';
-
+const styles = require('./Input.scss');
 export { styles };
 
 export const validationStates = {

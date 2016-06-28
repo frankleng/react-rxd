@@ -1,8 +1,7 @@
 /**
  * Created by frank on 6/22/16.
  */
-import styles from './Background.scss';
-
+const styles = require('./Background.scss');
 export { styles };
 
 /**

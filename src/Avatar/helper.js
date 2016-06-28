@@ -1,5 +1,4 @@
-import styles from './Avatar.scss';
-
+const styles = require('./Avatar.scss');
 export { styles };
 
 /**
