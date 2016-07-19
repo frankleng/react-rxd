@@ -7,3 +7,4 @@ node_modules
 .gitignore
 .eslintignore
 .idea
+*/__tests__

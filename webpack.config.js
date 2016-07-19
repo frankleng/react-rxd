@@ -3,6 +3,17 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
+const browsers = [
+  'Android >= 4',
+  'Chrome >= 20',
+  'Firefox >= 24',
+  'Explorer >= 9',
+  'Edge >= 1',
+  'iOS >= 6',
+  'Opera >= 12',
+  'Safari >= 6'
+];
+
 module.exports = {
   devtool: 'source-map',
 
@@ -35,22 +46,14 @@ module.exports = {
   sassLoader: {
     precision: 8
   },
-
-  postcss: [
-    autoprefixer({
-      browsers: [
-        'Android >= 4',
-        'Chrome >= 20',
-        'Firefox >= 24',
-        'Explorer >= 9',
-        'Edge >= 1',
-        'iOS >= 6',
-        'Opera >= 12',
-        'Safari >= 6'
+  postcss(bundler) {
+    return {
+      sass: [
+        require('postcss-import')({ addDependencyTo: bundler }),
+        require('autoprefixer')({ browsers })
       ]
-    })
-  ],
-
+    };
+  },
   module: {
     loaders: [
       {
@@ -70,7 +73,7 @@ module.exports = {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract(
           'style',
-          'css?modules!postcss!sass'
+          'css?modules!postcss?pack=sass!sass'
         )
       }
     ]

@@ -1,8 +1,8 @@
 /**
  * Created by frank on 6/21/16.
  */
-import React, { PropTypes } from 'react';
-import { getBackgroundClassnameFromProps } from './helper';
+const React = require('react');
+const { getBackgroundClassnameFromProps } = require('./helper');
 
 const Background = (props) =>
   <div className={getBackgroundClassnameFromProps(props)}>
@@ -11,10 +11,10 @@ const Background = (props) =>
   </div>;
 
 Background.propTypes = {
-  children: PropTypes.node.isRequired,
-  overlay: PropTypes.node,
-  className: PropTypes.string,
-  fullScreen: PropTypes.bool
+  children: React.PropTypes.node.isRequired,
+  overlay: React.PropTypes.node,
+  className: React.PropTypes.string,
+  fullScreen: React.PropTypes.bool
 };
 
 export default Background;

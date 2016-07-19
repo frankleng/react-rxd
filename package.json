@@ -30,18 +30,21 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "bourbon": "^4.2.7",
+    "classnames": "^2.2.5",
     "cpy-cli": "^1.0.1",
     "css-loader": "^0.23.1",
+    "flexboxgrid": "^6.3.0",
     "foundation-sites": "^6.2.3",
     "json-loader": "^0.5.4",
     "jsontosass-loader": "^0.1.8",
+    "lodash": "^4.13.1",
     "node-sass": "^3.8.0",
     "postcss-loader": "^0.9.1",
     "react": "^15.1.0",
+    "react-flexbox-grid": "^0.9.6",
     "react-foundation-components": "^0.11.2",
     "sass-loader": "^3.2.1",
     "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7",
     "webpack": "^1.13.1"
   },
   "devDependencies": {
@@ -65,8 +68,10 @@
     "karma-webpack": "^1.7.0",
     "mocha": "^2.5.3",
     "phantomjs-prebuilt": "^2.1.7",
+    "postcss-import": "^8.1.2",
     "react-addons-test-utils": "^15.1.0",
     "react-dom": "^15.1.0",
-    "sinon": "^1.17.4"
+    "sinon": "^1.17.4",
+    "url-loader": "^0.5.7"
   }
 }
