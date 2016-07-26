@@ -38,6 +38,7 @@
     "json-loader": "^0.5.4",
     "jsontosass-loader": "^0.1.8",
     "lodash": "^4.13.1",
+    "node-bourbon": "^4.2.8",
     "node-sass": "^3.8.0",
     "postcss-loader": "^0.9.1",
     "react": "^15.1.0",

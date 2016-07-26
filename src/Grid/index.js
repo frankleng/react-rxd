@@ -35,7 +35,6 @@ Grid.Column.propTypes = assign({
   expand: PropTypes.string
 
 }, Grid.Column.propTypes);
-
 Grid.Row.propTypes = assign({
 
   expanded: PropTypes.bool,

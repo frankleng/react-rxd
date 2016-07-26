@@ -46,14 +46,11 @@ module.exports = {
   sassLoader: {
     precision: 8
   },
-  postcss(bundler) {
-    return {
-      sass: [
-        require('postcss-import')({ addDependencyTo: bundler }),
-        require('autoprefixer')({ browsers })
-      ]
-    };
-  },
+  postcss: () => [
+    autoprefixer({
+      browsers: ['last 3 versions']
+    })
+  ],
   module: {
     loaders: [
       {
@@ -73,7 +70,7 @@ module.exports = {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract(
           'style',
-          'css?modules!postcss?pack=sass!sass'
+          'css?modules!postcss!sass'
         )
       }
     ]
