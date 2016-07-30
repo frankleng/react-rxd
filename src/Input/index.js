@@ -1,19 +1,27 @@
 /**
  * Created by frank on 6/21/16.
  */
-import React, { PropTypes } from 'react';
-import * as helper from './helper';
+const React = require('react');
+const { getInputClassnameFromProps, getValidationStates } = require('./helper');
+const { getRestProps } = require('../utils');
+
+const propTypes = {
+  placeholder: React.PropTypes.string,
+  className: React.PropTypes.string,
+  disabled: React.PropTypes.bool,
+  validationState: React.PropTypes.oneOf(getValidationStates())
+};
 
 const Input = (props) => {
-  const classNamesFromProps = helper.getInputClassnameFromProps(props);
-  return (<input className={`text-field ${classNamesFromProps}`} type="text" placeholder={props.placeholder} />);
+  const classNamesFromProps = getInputClassnameFromProps(props);
+  return (<input
+    className={classNamesFromProps}
+    type="text"
+    placeholder={props.placeholder}
+    {...getRestProps(props, propTypes)}
+  />);
 };
 
-Input.propTypes = {
-  placeholder: PropTypes.string,
-  className: PropTypes.string,
-  disabled: PropTypes.bool,
-  validationState: PropTypes.oneOf(helper.validationStates)
-};
+Input.propTypes = propTypes;
 
 export default Input;

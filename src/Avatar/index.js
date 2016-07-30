@@ -16,7 +16,7 @@ const Avatar = (props) => {
 
 Avatar.propTypes = {
   children: React.PropTypes.node,
-  size: React.PropTypes.oneOf(['xsmall', 'medium', 'large', 'xlarge']),
+  size: React.PropTypes.oneOf(['xsmall', 'medium', 'large', 'xlarge', 'xxlarge']),
   square: React.PropTypes.bool,
   className: React.PropTypes.string
 };

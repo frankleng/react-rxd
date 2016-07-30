@@ -18,6 +18,7 @@
     "import/no-unresolved": 0,
     "comma-dangle": ["error", "never"]
   },
+  "parser": "babel-eslint",
   "settings": {
     "import/resolve": {
       "moduleDirectory": ["node_modules", "src"]

@@ -19,7 +19,7 @@
   transition: $input-transition;
 
   label {
-    color: $grey-light-80;
+    color: $grey-light-4;
     position: absolute;
     top: 0.8rem;
     left: $gutter-width / 2;
@@ -65,13 +65,15 @@
 
 // Valid Input Style
 .success {
-  &:focus {
+  border-bottom: 1px solid $input-success-color;
+  box-shadow: 0 1px 0 0 $input-success-color;
+  &:focus:not([readonly]) {
     border-bottom: 1px solid $input-success-color;
     box-shadow: 0 1px 0 0 $input-success-color;
   }
   // Custom Success Message
   & + label:after,
-  &:focus + label:after {
+  &:focus:not([readonly]) + label:after {
     content: attr(data-success);
     color: $input-success-color;
     opacity: 1;
@@ -79,19 +81,19 @@
 }
 
 // Invalid Input Style
-.error {
-  &:focus {
+.invalid {
+  border-bottom: $input-invalid-border;
+  box-shadow: 0 1px 0 0 $input-error-color;
+  &:focus:not([readonly]) {
     border-bottom: $input-invalid-border;
     box-shadow: 0 1px 0 0 $input-error-color;
   }
 
   // Custom Error message
   & + label:after,
-  &:focus + label:after {
+  &:focus:not([readonly]) + label:after {
     content: attr(data-error);
     color: $input-error-color;
     opacity: 1;
   }
 }
-
-

@@ -4,46 +4,40 @@
   background-color: $card-background;
   border: $card-border;
   border-radius: $base-border-radius;
-  box-shadow: 0 2px 4px darken($base-background-color, 10%);
-  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(145, 160, 170, 0.5);
   flex-basis: 15em;
   flex-grow: 1;
   margin: 0 $card-margin $base-spacing $card-margin;
   position: relative;
   transition: all 0.2s ease-in-out;
 
-  &:focus,
   &:hover {
-    cursor: pointer;
-
-    img {
-      opacity: $card-image-hover-opacity;
-    }
+    box-shadow: 0 1px 4px rgba($grey, 0.5);
   }
 
   &:global(.primary) {
-    background-color: $primary-color-light-100;
-    border: 1px solid $primary-color-light-80;
+    background-color: $primary-color-light-5;
+    border: 1px solid $primary-color-light-4;
     border-radius: $base-border-radius;
-    color: $primary-color-dark-40;
+    color: $primary-color-dark-2;
   }
   &:global(.success) {
-    background-color: $success-color-light-100;
-    border: 1px solid $success-color-light-80;
+    background-color: $success-color-light-5;
+    border: 1px solid $success-color-light-4;
     border-radius: $base-border-radius;
-    color: $success-color-dark-40;
+    color: $success-color-dark-2;
   }
   &:global(.warning) {
-    background-color: $warning-color-light-100;
-    border: 1px solid $warning-color-light-80;
+    background-color: $warning-color-light-5;
+    border: 1px solid $warning-color-light-4;
     border-radius: $base-border-radius;
-    color: $success-color-dark-40;
+    color: $success-color-dark-2;
   }
   &:global(.danger) {
-    background-color: $danger-color-light-100;
-    border: 1px solid $danger-color-light-80;
+    background-color: $danger-color-light-5;
+    border: 1px solid $danger-color-light-4;
     border-radius: $base-border-radius;
-    color: $danger-color-dark-40;
+    color: $danger-color-dark-2;
   }
 }
 

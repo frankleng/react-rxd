@@ -2,11 +2,10 @@
  * Created by frank on 7/19/16.
  */
 const React = require('react');
-const style = require('./Card.scss');
-const classnames = require('classnames');
+const helper = require('./helper');
 
 const Card = (props) => (
-  <div className={classnames(style.card, ...props)}>
+  <div className={helper.getCardClassnameFromProps(props)}>
     {props.children}
   </div>);
 
@@ -15,7 +14,8 @@ Card.propTypes = {
   success: React.PropTypes.bool,
   warning: React.PropTypes.bool,
   danger: React.PropTypes.bool,
-  children: React.PropTypes.node
+  children: React.PropTypes.node,
+  className: React.PropTypes.string
 };
 
 module.exports = Card;

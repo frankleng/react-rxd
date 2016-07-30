@@ -1,10 +1,10 @@
 @import '../common';
 
 .avatar {
-  background-color: $grey-light-40;
+  background-color: $grey-light-4;
   border-radius: 50%;
   box-shadow: inset 0 1px 4px 0 $grey;
-  color: $grey-light-100;
+  color: $grey-light-5;
   display: inline-block;
   font-weight: 700;
   letter-spacing: .025em;
@@ -70,6 +70,12 @@
   width: 80px;
   font-size: 24px;
   line-height: 80px;
+}
+.xxlarge {
+  height: 120px;
+  width: 120px;
+  font-size: 28px;
+  line-height: 120px;
 }
 .square {
   border-radius: 3px;

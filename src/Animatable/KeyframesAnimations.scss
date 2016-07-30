@@ -1,0 +1,18 @@
+@keyframes :local(shake) {
+  from, to {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 40%, 60%, 80%, 100% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  30%, 50%, 70%, 90% {
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+.shake {
+  animation-name: shake;
+  animation-duration: 650ms;
+}

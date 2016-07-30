@@ -1,92 +1,14 @@
 @import "~bourbon/app/assets/stylesheets/bourbon";
-
-///Base colors
-$base-background-color: white !default;
-
-$primary-color: #4abbf3;
-$success-color: #89d5ac;
-$warning-color: #ffe21b;
-$danger-color: #e33e3e;
-
-//basic
-$white: #fff;
-$black: #000;
-$grey: #979797;
-
-// Colors
-//primary
-$primary-color-dark-20: darken($primary-color, 20%);
-$primary-color-dark-40: darken($primary-color, 40%);
-$primary-color-dark-60: darken($primary-color, 60%);
-$primary-color-dark-80: darken($primary-color, 80%);
-$primary-color-dark-100: darken($primary-color, 100%);
-
-$primary-color-light-20: lighten($primary-color, 20%);
-$primary-color-light-40: lighten($primary-color, 40%);
-$primary-color-light-60: lighten($primary-color, 60%);
-$primary-color-light-80: lighten($primary-color, 80%);
-$primary-color-light-100: lighten($primary-color, 100%);
-
-//grey
-$grey-dark-20: darken($grey, 20%);
-$grey-dark-40: darken($grey, 40%);
-$grey-dark-60: darken($grey, 60%);
-$grey-dark-80: darken($grey, 80%);
-$grey-dark-100: darken($grey, 100%);
-
-$grey-light-20: lighten($grey, 20%);
-$grey-light-40: lighten($grey, 40%);
-$grey-light-60: lighten($grey, 60%);
-$grey-light-80: lighten($grey, 80%);
-$grey-light-100: lighten($grey, 100%);
-
-//success
-$success-color-dark-20: darken($success-color, 20%);
-$success-color-dark-40: darken($success-color, 40%);
-$success-color-dark-60: darken($success-color, 60%);
-$success-color-dark-80: darken($success-color, 80%);
-$success-color-dark-100: darken($success-color, 100%);
-
-$success-color-light-20: lighten($success-color, 20%);
-$success-color-light-40: lighten($success-color, 40%);
-$success-color-light-60: lighten($success-color, 60%);
-$success-color-light-80: lighten($success-color, 80%);
-$success-color-light-100: lighten($success-color, 100%);
-
-//warning
-$warning-color-dark-20: darken($warning-color, 20%);
-$warning-color-dark-40: darken($warning-color, 40%);
-$warning-color-dark-60: darken($warning-color, 60%);
-$warning-color-dark-80: darken($warning-color, 80%);
-$warning-color-dark-100: darken($warning-color, 100%);
-
-$warning-color-light-20: lighten($warning-color, 20%);
-$warning-color-light-40: lighten($warning-color, 40%);
-$warning-color-light-60: lighten($warning-color, 60%);
-$warning-color-light-80: lighten($warning-color, 80%);
-$warning-color-light-100: lighten($warning-color, 100%);
-
-//danger
-$danger-color-dark-20: darken($danger-color, 20%);
-$danger-color-dark-40: darken($danger-color, 40%);
-$danger-color-dark-60: darken($danger-color, 60%);
-$danger-color-dark-80: darken($danger-color, 80%);
-$danger-color-dark-100: darken($danger-color, 100%);
-
-$danger-color-light-20: lighten($danger-color, 20%);
-$danger-color-light-40: lighten($danger-color, 40%);
-$danger-color-light-60: lighten($danger-color, 60%);
-$danger-color-light-80: lighten($danger-color, 80%);
-$danger-color-light-100: lighten($danger-color, 100%);
+@import "colors";
 
 //FORM
 $select-focus: $primary-color;
-$button-background-focus: lighten($primary-color, 4%) !default;
+$button-background-focus: tint($primary-color, 4%) !default;
 
 //TEXT RELATE VARIABLES
 
 //BASE TEXT COLORS
-$base-font-color: $grey-dark-80;
+$base-font-color: $grey-dark-4;
 $base-link-color: $primary-color;
 
 //FONT STACK
@@ -133,7 +55,7 @@ $base-spacing:              30px;
 $base-padding:              20px;
 
 //Border
-$base-border-color:         $grey-light-80;
+$base-border-color:         $grey-light-4;
 $base-border:               1px solid $base-border-color;
 $quote-border-left:         $primary-color;
 
@@ -161,7 +83,7 @@ $input-disabled-color: rgba(0,0,0, .26) !default;
 $input-disabled-solid-color: #BDBDBD !default;
 $input-disabled-border: 1px dotted $input-disabled-color !default;
 $input-invalid-border: 1px solid $input-error-color !default;
-$placeholder-text-color: $grey-light-80 !default;
+$placeholder-text-color: $grey-light-4 !default;
 
 // Radio Buttons
 $radio-fill-color: $primary-color !default;
@@ -176,14 +98,14 @@ $track-height: 3px !default;
 // Select
 $select-border: 1px solid #f2f2f2 !default;
 $select-background: rgba(255, 255, 255, 0.90) !default;
-$select-focus: 1px solid lighten($primary-color, 47%) !default;
+$select-focus: 1px solid tint($primary-color, 47%) !default;
 $select-padding: 5px !default;
 $select-radius: 2px !default;
 $select-disabled-color: rgba(0,0,0,.3) !default;
 
 // Switches
 $switch-bg-color: $primary-color !default;
-$switch-checked-lever-bg: desaturate(lighten($primary-color, 25%), 25%) !default;
+$switch-checked-lever-bg: desaturate(tint($primary-color, 25%), 25%) !default;
 $switch-unchecked-bg: #F1F1F1 !default;
 $switch-unchecked-lever-bg: #818181 !default;
 $switch-radius: 15px !default;
@@ -198,7 +120,7 @@ $dropdown-item-height: 50px !default;
 //Card
 $card-border-color: $base-border-color;
 $card-border: 1px solid $card-border-color;
-$card-background: lighten($card-border-color, 10%);
+$card-background: white;
 $card-header-background: $card-background;
 $card-margin: 1em;
 $card-image-hover-opacity: 0.7;
