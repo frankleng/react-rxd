@@ -2,8 +2,10 @@
  * Import directly from react-foundation-components
  */
 const assign = require('lodash/assign');
+const React = require('react');
 const PropTypes = require('react').PropTypes;
 const Grid = require('react-foundation-components/lib/grid-flex');
+const styles = require('./Row.scss');
 
 Grid.Column.propTypes = assign({
 
@@ -53,4 +55,22 @@ Grid.Row.propTypes = assign({
 
 }, Grid.Column.propTypes);
 
-module.exports = Grid;
+const Row = (props) => {
+  const { fullWidth, className, ...rest } = props;
+  const fullWidthClassName = fullWidth ? styles.fullWidth : '';
+  const rowClassName = className ? `${className} ${fullWidthClassName}` : fullWidthClassName;
+  return (
+    <Grid.Row className={rowClassName} {...rest} />
+  );
+};
+Row.propTypes = {
+  fullWidth: PropTypes.bool,
+  className: PropTypes.string
+};
+
+const Column = Grid.Column;
+
+module.exports = {
+  Row,
+  Column
+};

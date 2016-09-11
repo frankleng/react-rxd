@@ -1,6 +1,6 @@
 @import "../common";
 // Styling for input field wrapper
-.input-field {
+.inputField {
   position: relative;
 
   // General Styles
@@ -26,19 +26,6 @@
     font-size: 1rem;
     cursor: text;
     transition: .2s ease-out;
-  }
-
-  // Disabled input style
-  &:disabled,
-  &[readonly="readonly"] {
-    color: $input-disabled-color;
-    border-bottom: $input-disabled-border;
-  }
-
-  // Disabled label style
-  &:disabled+label,
-  &[readonly="readonly"]+label {
-    color: $input-disabled-color;
   }
 
   // Focused input style
@@ -95,5 +82,20 @@
     content: attr(data-error);
     color: $input-error-color;
     opacity: 1;
+  }
+}
+
+.disabled {
+  // Disabled input style
+  &:disabled,
+  &[readonly="readonly"] {
+    color: $input-disabled-color;
+    border-bottom: $input-disabled-border;
+  }
+
+  // Disabled label style
+  &:disabled+label,
+  &[readonly="readonly"]+label {
+    color: $input-disabled-color;
   }
 }

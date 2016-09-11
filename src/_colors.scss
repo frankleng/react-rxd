@@ -79,3 +79,14 @@ $danger-color-light-2: lighten($danger-color, $colorAdjustmentPercentage*2);
 $danger-color-light-3: lighten($danger-color, $colorAdjustmentPercentage*3);
 $danger-color-light-4: lighten($danger-color, $colorAdjustmentPercentage*4);
 $danger-color-light-5: lighten($danger-color, $colorAdjustmentPercentage*5);
+
+// Browser default color overrides
+
+// Chrome input autocomplete color - http://stackoverflow.com/a/30796784/4184450
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-box-shadow: 0 0 0 1000px #fff inset;
+}

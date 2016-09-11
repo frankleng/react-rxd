@@ -1,28 +1,32 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExternalsPlugin = require('webpack-externals-plugin');
 const autoprefixer = require('autoprefixer');
-
-const browsers = [
-  'Android >= 4',
-  'Chrome >= 20',
-  'Firefox >= 24',
-  'Explorer >= 9',
-  'Edge >= 1',
-  'iOS >= 6',
-  'Opera >= 12',
-  'Safari >= 6'
-];
 
 module.exports = {
   devtool: 'source-map',
 
-  entry: path.join(__dirname, 'src/index.js'),
+  entry: {
+    AjaxLoader: './src/AjaxLoader/index.js',
+    Animatable: './src/Animatable/index.js',
+    Avatar: './src/Avatar/index.js',
+    Background: './src/Background/index.js',
+    Button: './src/Button/index.js',
+    Card: './src/Card/index.js',
+    Grid: './src/Grid/index.js',
+    Input: './src/Input/index.js',
+    MediaObject: './src/MediaObject/index.js',
+    TextAlignment: './src/TextAlignment/index.js',
+    Typography: './src/Typography/index.js',
+    Visibility: './src/Visibility/index.js'
+  },
 
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'index.js',
-    publicPath: '/'
+    filename: '[name].js',
+    publicPath: '/',
+    libraryTarget: 'commonjs2'
   },
 
   resolve: {
@@ -37,20 +41,16 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
-    new ExtractTextPlugin('rxd.css'),
+    new ExternalsPlugin({
+      type: 'commonjs',
+      include: path.join(__dirname, '../node_modules/')
+    }),
+    new ExtractTextPlugin('rxd', '[name].css', { allChunks: true }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.AggressiveMergingPlugin()
   ],
 
-  sassLoader: {
-    precision: 8
-  },
-  postcss: () => [
-    autoprefixer({
-      browsers: ['last 3 versions']
-    })
-  ],
   module: {
     loaders: [
       {
@@ -70,7 +70,7 @@ module.exports = {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract(
           'style',
-          'css?modules!postcss!sass'
+          'css?module&localIdentName=[name]_[local]!sass'
         )
       }
     ]

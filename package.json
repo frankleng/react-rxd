@@ -6,28 +6,28 @@
     "url": "git@github.com:Realstax/react-rxd.git"
   },
   "scripts": {
-    "build": "webpack",
+    "build": "rm -rf dist && webpack",
     "lint": "eslint --fix --config .eslintrc src",
     "lint-ci": "eslint -c .eslintrc src -f junit -o $CIRCLE_TEST_REPORTS/eslint/report.xml",
     "prepush": "npm run lint && npm test",
     "test": "karma start --single-run",
     "watch-test": "karma start",
-    "compile": "babel --presets es2015,react,stage-0 -d lib/ src/ && cpy \"**/*.scss\" ../lib --parents --cwd=src",
-    "postinstall": "npm run compile"
+    "compile": "babel --presets es2015,react,stage-0 -d lib/ src/ && cpy \"**/*.scss\" ../lib --parents --cwd=src"
   },
-  "main": "lib/index.js",
+  "main": "dist/",
   "license": "MIT",
   "version": "0.0.12",
   "dependencies": {
     "autoprefixer": "^6.3.6",
-    "babel-cli": "^6.10.1",
-    "babel-core": "^6.9.1",
-    "babel-loader": "^6.2.4",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-plugin-react-transform": "^2.0.2",
-    "babel-plugin-transform-runtime": "^6.9.0",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.5.0",
+    "babel-cli": "^6.14.0",
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-css-modules-transform": "^1.0.0",
+    "babel-plugin-webpack-loaders": "^0.7.1",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-react-optimize": "^1.0.1",
     "babel-preset-stage-0": "^6.5.0",
     "bourbon": "^4.2.7",
     "classnames": "^2.2.5",
@@ -35,6 +35,7 @@
     "css-loader": "^0.23.1",
     "flexboxgrid": "^6.3.0",
     "foundation-sites": "^6.2.3",
+    "inline-css-webpack-loader": "^1.0.0",
     "json-loader": "^0.5.4",
     "jsontosass-loader": "^0.1.8",
     "lodash": "^4.13.1",
@@ -42,6 +43,7 @@
     "node-sass": "^3.8.0",
     "postcss-loader": "^0.9.1",
     "react": "^15.1.0",
+    "react-click-outside": "^2.1.0",
     "react-flexbox-grid": "^0.9.6",
     "react-foundation-components": "^0.11.2",
     "sass-loader": "^3.2.1",
@@ -74,6 +76,7 @@
     "react-addons-test-utils": "^15.1.0",
     "react-dom": "^15.1.0",
     "sinon": "^1.17.4",
-    "url-loader": "^0.5.7"
+    "url-loader": "^0.5.7",
+    "webpack-externals-plugin": "^1.0.0"
   }
 }

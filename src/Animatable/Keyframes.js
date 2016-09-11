@@ -8,17 +8,21 @@ const classnames = require('classnames');
 const AnimatableKeyframes = (props) => (
   <div
     className={classnames({
-      [styles[props.keyframeClass]]: props.shouldAnimate
+      [styles[props.keyframeClass]]: props.shouldAnimate,
+      [props.className]: props.className
     })}
   >
     {props.children}
   </div>
 );
 
+AnimatableKeyframes.shouldComponentUpdate = () => true;
+
 AnimatableKeyframes.propTypes = {
   shouldAnimate: React.PropTypes.bool.isRequired,
-  keyframeClass: React.PropTypes.oneOf(['shake']),
-  children: React.PropTypes.node.isRequired
+  children: React.PropTypes.node.isRequired,
+  className: React.PropTypes.string,
+  keyframeClass: React.PropTypes.oneOf(['shake', 'bounceIn', 'fadeInUp', 'slideInUp', 'bounceInUp'])
 };
 
 export default AnimatableKeyframes;

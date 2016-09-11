@@ -18,7 +18,9 @@ Background.propTypes = {
   imagePath: React.PropTypes.string.isRequired,
   noRepeat: React.PropTypes.bool,
   scaleToRelative: React.PropTypes.bool,
-  darken: React.PropTypes.number  // percentage of black opacity
+  cover: React.PropTypes.bool,
+  darken: React.PropTypes.number,  // percentage of black opacity
+  centered: React.PropTypes.bool
 };
 
 export default Background;

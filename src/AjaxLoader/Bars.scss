@@ -1,0 +1,58 @@
+.loadingBar {
+  display: inline-block;
+  width: 10px;
+  height: 20px;
+  margin: 5px;
+  border-radius: 4px;
+  animation: loading 1s ease-in-out infinite;
+}
+.loadingBar:nth-child(1) {
+  background-color: #1882C0;
+}
+.loadingBar:nth-child(2) {
+  background-color: #1882C0;
+  animation-delay: 0.09s;
+}
+.loadingBar:nth-child(3) {
+  background-color: #1882C0;
+  animation-delay: .18s;
+}
+.loadingBar:nth-child(4) {
+  background-color: #1882C0;
+  animation-delay: .27s;
+}
+.loadingBar:nth-child(5) {
+  background-color: #1882C0;
+  animation-delay: .36s;
+}
+.loadingBar:nth-child(6) {
+  background-color: #3FAFE8;
+  animation-delay: .45s;
+}
+.loadingBar:nth-child(7) {
+  background-color: #3FAFE8;
+  animation-delay: .54s;
+}
+.loadingBar:nth-child(8) {
+  background-color: #3FAFE8;
+  animation-delay: .63s;
+}
+.loadingBar:nth-child(9) {
+  background-color: #3FAFE8;
+  animation-delay: .72s;
+}
+.loadingBar:nth-child(10) {
+  background-color: #3FAFE8;
+  animation-delay: .81s;
+}
+@keyframes :local(loading) {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1, 2.2);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
