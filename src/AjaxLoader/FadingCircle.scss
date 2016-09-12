@@ -1,0 +1,44 @@
+$spinner-margin: 40px auto !default;
+$size: 40px !default;
+$color: #333 !default;
+$circleCount: 12;
+$animationDuration: 1.2s;
+
+.fadingCircle {
+  margin: $spinner-margin;
+  width: $size;
+  height: $size;
+  position: relative;
+}
+
+.circle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  &:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 15%;
+    height: 15%;
+    background-color: $color;
+    border-radius: 100%;
+    animation: circleFadeDelay $animationDuration infinite ease-in-out both;
+  }
+}
+
+@for $i from 2 through $circleCount {
+  .circle:nth-child(#{$i}) {
+    transform: rotate(360deg / $circleCount * ($i - 1));
+    &:before {
+      animation-delay: - $animationDuration + $animationDuration / $circleCount * ($i - 1);
+    }
+  }
+}
+
+@keyframes :local(circleFadeDelay) {
+  0%, 39%, 100% { opacity: 0 }
+  40% { opacity: 1 }
+}

@@ -1,2 +1,1 @@
-import Visibility from 'react-foundation-components/lib/visibility';
-export default Visibility;
+module.exports = require('react-foundation-components/lib/visibility');

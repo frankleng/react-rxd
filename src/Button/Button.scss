@@ -1,0 +1,190 @@
+@import "../common";
+
+.commonButton {
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+  border-radius: $base-border-radius;
+  font: $small-font-size;
+  font-size: $small-font-size;
+  font-weight: $font-weight-xbold;
+  line-height: $base-line-height;
+  padding: 9px 18px;
+  text-transform: none;
+  display: inline-block;
+  cursor: pointer;
+
+  &:active {
+    -webkit-transform: translateY(1px);
+    -moz-transform: translateY(1px);
+    -ms-transform: translateY(1px);
+    -o-transform: translateY(1px);
+    transform: translateY(1px);
+    -webkit-transform: scale(0.99);
+    -moz-transform: scale(0.99);
+    -ms-transform: scale(0.99);
+    -o-transform: scale(0.99);
+    transform: scale(0.99);
+    display: inline-block;
+  }
+
+  &:focus {
+    outline: $primary-color dotted thin;
+    display: inline-block;
+  }
+}
+
+.btn {
+  composes: commonButton;
+  background-image: $grey-light-4;
+  border: 1px solid $grey-light-3;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  color: $grey;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+
+  &:active {
+    background-image: $grey-light-5;
+    box-shadow: inset 0 0 3px 0 rgba(109, 129, 142, 0.3),
+    inset 0 0 2px 0 rgba(0, 0, 0, 0.2),
+    inset 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    inset 0 0 2px 0 rgba(145, 160, 170, 0.2);
+  }
+  > :global(.icon) {
+    font-family: $icon-stack;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: $font-weight-bold;
+    line-height: 1;
+    margin-right: 5px;
+    speak: none;
+    text-transform: none;
+  }
+  &:global(.primary) {
+    background: $primary-color-dark-1;
+    border: 1px $primary-color-dark-2;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    color: $white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+    display: inline-block;
+    &:active {
+      background: $primary-color-light-3;
+      box-shadow: inset 0 0 3px 0 rgba(109, 129, 142, 0.3), inset 0 0 2px 0 rgba(0, 0, 0, 0.2), inset 0 1px 3px 0 rgba(0, 0, 0, 0.1), inset 0 0 2px 0 rgba(11, 83, 131, 0.2);
+    }
+  }
+  &:global(.info) {
+    background-color: $white;
+    border: 1px solid $primary-color-dark-2;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    color: $primary-color-dark-2;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+    background-image: none;
+    &:active {
+      background-image: linear-gradient(-1deg, $primary-color 0%, "none" 97%);
+      box-shadow: inset 0 0 3px 0 rgba(109, 129, 142, 0.3), inset 0 0 2px 0 rgba(0, 0, 0, 0.2), inset 0 1px 3px 0 rgba(0, 0, 0, 0.1), inset 0 0 2px 0 rgba(11, 83, 131, 0.2);
+    }
+  }
+  &:global(.success) {
+    background-image: linear-gradient(-180deg, $success-color 3%, $success-color-dark-1 100%);
+    border: 1px solid $success-color-dark-1;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    color: $success-color-light-5;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+    &:active {
+      background-image: linear-gradient(-1deg, $success-color 0%, $success-color-dark-1 97%);
+      box-shadow: inset 0 0 3px 0 rgba(109, 129, 142, 0.3), inset 0 0 2px 0 rgba(0, 0, 0, 0.2), inset 0 1px 3px 0 rgba(0, 0, 0, 0.1), inset 0 0 2px 0 rgba(92, 126, 58, 0.2);
+    }
+  }
+  &:global(.warning) {
+    background-image: linear-gradient(-180deg, $warning-color 3%, $warning-color-dark-2 100%);
+    border: 1px solid $warning-color-dark-2;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    color: $warning-color-light-5;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+    &:active {
+      background-image: linear-gradient(-1deg, $warning-color 0%, $warning-color-dark-2 97%);
+      box-shadow: inset 0 0 3px 0 rgba(109, 129, 142, 0.3), inset 0 0 2px 0 rgba(0, 0, 0, 0.2), inset 0 1px 3px 0 rgba(0, 0, 0, 0.1), inset 0 0 2px 0 rgba(143, 109, 40, 0.2);
+    }
+  }
+  &:global(.danger) {
+    background-image: linear-gradient(-180deg, $danger-color 3%, $danger-color-dark-1 100%);
+    border: 1px solid $danger-color-dark-1;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    color: #fcebeb;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+    &:active {
+      background-image: linear-gradient(-1deg, $danger-color 0%, $danger-color-dark-1 97%);
+      box-shadow: inset 0 0 3px 0 rgba(109, 129, 142, 0.3), inset 0 0 2px 0 rgba(0, 0, 0, 0.2), inset 0 1px 3px 0 rgba(0, 0, 0, 0.1), inset 0 0 2px 0 rgba(140, 66, 44, 0.2);
+    }
+  }
+  &:global(.plain) {
+    background: none;
+    border: 0;
+    box-shadow: none;
+    text-shadow: none;
+    &:hover {
+      background-color: $grey-light-4;
+    }
+    > .icon {
+      margin-right: 0;
+    }
+  }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .5;
+    pointer-events: none;
+  }
+}
+
+.btnFlat {
+  composes: commonButton;
+  background-color: $grey-light-5;
+  border: solid 1px $grey-light-3;
+  color: $grey;
+  display: inline-block;
+  &:active {
+    background-color: $grey-light-3;
+  }
+  &:global(.primary) {
+    background-color: $primary-color;
+    border: solid 1px $primary-color-dark-2;
+    color: $primary-color-light-5;
+    &:active {
+      background-color: $primary-color-dark-2;
+    }
+  }
+  &:global(.info) {
+    background-color: $primary-color;
+    border: solid 1px $primary-color-dark-2;
+    color: $primary-color-light-5;
+    background-color: rgba(30, 153, 235, 0.05);
+    color: $primary-color-dark-2;
+    &:active {
+      background-color: $primary-color-dark-2;
+      background-color: rgba(30, 153, 235, 0.1);
+    }
+  }
+  &:global(.success) {
+    background-color: $success-color;
+    border: solid 1px $success-color-dark-1;
+    color: $success-color-light-5;
+    &:active {
+      background-color: $success-color-dark-1;
+    }
+  }
+  &:global(.warning) {
+    background-color: $warning-color;
+    border: solid 1px $warning-color-dark-2;
+    color: $warning-color-light-5;
+    &:active {
+      background-color: $warning-color-dark-2;
+    }
+  }
+  &:global(.danger) {
+    background-color: $danger-color;
+    border: solid 1px $danger-color-dark-1;
+    color: #fcebeb;
+    &:active {
+      background-color: $danger-color-dark-1;
+    }
+  }
+}

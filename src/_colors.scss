@@ -1,0 +1,92 @@
+
+$colorAdjustmentPercentage: 7%;
+
+///Base colors
+$base-background-color: white !default;
+
+$primary-color: #4abbf3;
+$success-color: #89d5ac;
+$warning-color: #ffe21b;
+$danger-color: #e33e3e;
+
+//basic
+$white: #fff;
+$black: #000;
+$grey: #979797;
+
+// Colors
+//primary
+$primary-color-dark-1: darken($primary-color, $colorAdjustmentPercentage);
+$primary-color-dark-2: darken($primary-color, $colorAdjustmentPercentage*2);
+$primary-color-dark-3: darken($primary-color, $colorAdjustmentPercentage*3);
+$primary-color-dark-4: darken($primary-color, $colorAdjustmentPercentage*4);
+$primary-color-dark-5: darken($primary-color, $colorAdjustmentPercentage*5);
+
+$primary-color-light-1: lighten($primary-color, $colorAdjustmentPercentage);
+$primary-color-light-2: lighten($primary-color, $colorAdjustmentPercentage*2);
+$primary-color-light-3: lighten($primary-color, $colorAdjustmentPercentage*3);
+$primary-color-light-4: lighten($primary-color, $colorAdjustmentPercentage*4);
+$primary-color-light-5: lighten($primary-color, $colorAdjustmentPercentage*5);
+
+//grey
+$grey-dark-1: darken($grey, $colorAdjustmentPercentage);
+$grey-dark-2: darken($grey, $colorAdjustmentPercentage*2);
+$grey-dark-3: darken($grey, $colorAdjustmentPercentage*3);
+$grey-dark-4: darken($grey, $colorAdjustmentPercentage*4);
+$grey-dark-5: darken($grey, $colorAdjustmentPercentage*5);
+
+$grey-light-1: lighten($grey, $colorAdjustmentPercentage);
+$grey-light-2: lighten($grey, $colorAdjustmentPercentage*2);
+$grey-light-3: lighten($grey, $colorAdjustmentPercentage*3);
+$grey-light-4: lighten($grey, $colorAdjustmentPercentage*4);
+$grey-light-5: lighten($grey, $colorAdjustmentPercentage*5);
+
+//success
+$success-color-dark-1: darken($success-color, $colorAdjustmentPercentage);
+$success-color-dark-2: darken($success-color, $colorAdjustmentPercentage*2);
+$success-color-dark-3: darken($success-color, $colorAdjustmentPercentage*3);
+$success-color-dark-4: darken($success-color, $colorAdjustmentPercentage*4);
+$success-color-dark-5: darken($success-color, $colorAdjustmentPercentage*5);
+
+$success-color-light-1: lighten($success-color, $colorAdjustmentPercentage);
+$success-color-light-2: lighten($success-color, $colorAdjustmentPercentage*2);
+$success-color-light-3: lighten($success-color, $colorAdjustmentPercentage*3);
+$success-color-light-4: lighten($success-color, $colorAdjustmentPercentage*4);
+$success-color-light-5: lighten($success-color, $colorAdjustmentPercentage*5);
+
+//warning
+$warning-color-dark-1: darken($warning-color, $colorAdjustmentPercentage);
+$warning-color-dark-2: darken($warning-color, $colorAdjustmentPercentage*2);
+$warning-color-dark-3: darken($warning-color, $colorAdjustmentPercentage*3);
+$warning-color-dark-4: darken($warning-color, $colorAdjustmentPercentage*4);
+$warning-color-dark-5: darken($warning-color, $colorAdjustmentPercentage*5);
+
+$warning-color-light-1: lighten($warning-color, $colorAdjustmentPercentage);
+$warning-color-light-2: lighten($warning-color, $colorAdjustmentPercentage*2);
+$warning-color-light-3: lighten($warning-color, $colorAdjustmentPercentage*3);
+$warning-color-light-4: lighten($warning-color, $colorAdjustmentPercentage*4);
+$warning-color-light-5: lighten($warning-color, $colorAdjustmentPercentage*5);
+
+//danger
+$danger-color-dark-1: darken($danger-color, $colorAdjustmentPercentage);
+$danger-color-dark-2: darken($danger-color, $colorAdjustmentPercentage*2);
+$danger-color-dark-3: darken($danger-color, $colorAdjustmentPercentage*3);
+$danger-color-dark-4: darken($danger-color, $colorAdjustmentPercentage*4);
+$danger-color-dark-5: darken($danger-color, $colorAdjustmentPercentage*5);
+
+$danger-color-light-1: lighten($danger-color, $colorAdjustmentPercentage);
+$danger-color-light-2: lighten($danger-color, $colorAdjustmentPercentage*2);
+$danger-color-light-3: lighten($danger-color, $colorAdjustmentPercentage*3);
+$danger-color-light-4: lighten($danger-color, $colorAdjustmentPercentage*4);
+$danger-color-light-5: lighten($danger-color, $colorAdjustmentPercentage*5);
+
+// Browser default color overrides
+
+// Chrome input autocomplete color - http://stackoverflow.com/a/30796784/4184450
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-box-shadow: 0 0 0 1000px #fff inset;
+}

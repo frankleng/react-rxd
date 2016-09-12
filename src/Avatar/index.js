@@ -1,8 +1,8 @@
 /**
  * Created by frank on 6/21/16.
  */
-import React, { PropTypes } from 'react';
-import { getBaseClassName, getAvatarClassnameFromProps } from './helper';
+const React = require('react');
+const { getBaseClassName, getAvatarClassnameFromProps } = require('./helper');
 
 const Avatar = (props) => {
   const baseClass = getBaseClassName(props.children);
@@ -15,10 +15,10 @@ const Avatar = (props) => {
 };
 
 Avatar.propTypes = {
-  children: PropTypes.node,
-  size: PropTypes.oneOf(['xsmall', 'medium', 'large', 'xlarge']),
-  square: PropTypes.bool,
-  className: PropTypes.string
+  children: React.PropTypes.node,
+  size: React.PropTypes.oneOf(['xsmall', 'medium', 'large', 'xlarge', 'xxlarge']),
+  square: React.PropTypes.bool,
+  className: React.PropTypes.string
 };
 
 export default Avatar;

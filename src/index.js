@@ -1,16 +1,14 @@
 /**
- * Created by frank on 6/20/16.
+ * Created by frank on 9/8/16.
  */
-import Avatar from './Avatar';
-import Background from './Background';
-import Float from './Float';
-import Grid from './Grid';
-import Visibility from './Visibility';
 
-export default {
-  Avatar,
-  Background,
-  Float,
-  Grid,
-  Visibility
-};
+export Animatable from './Animatable';
+export Avatar from './Avatar';
+export Background from './Background';
+export Button from './Button';
+export Card from './Card';
+export Grid from './Grid';
+export Input from './Input';
+export TextAlignment from './TextAlignment';
+export Typography from './Typography';
+export Visibility from './Visibility';

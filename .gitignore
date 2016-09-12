@@ -1,4 +1,3 @@
-dist
 # Created by .ignore support plugin (hsz.mobi)
 ### Node template
 # Logs
@@ -40,3 +39,4 @@ jspm_packages
 .node_repl_history
 
 .idea
+lib

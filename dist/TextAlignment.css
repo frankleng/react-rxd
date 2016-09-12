@@ -1,0 +1,53 @@
+._styles_text-left {
+  text-align: left; }
+
+._styles_text-right {
+  text-align: right; }
+
+._styles_text-center {
+  text-align: center; }
+
+._styles_text-justify {
+  text-align: justify; }
+
+@media screen and (min-width: 40em) {
+  ._styles_medium-text-left {
+    text-align: left; }
+  ._styles_medium-text-right {
+    text-align: right; }
+  ._styles_medium-text-center {
+    text-align: center; }
+  ._styles_medium-text-justify {
+    text-align: justify; } }
+
+@media screen and (min-width: 64em) {
+  ._styles_large-text-left {
+    text-align: left; }
+  ._styles_large-text-right {
+    text-align: right; }
+  ._styles_large-text-center {
+    text-align: center; }
+  ._styles_large-text-justify {
+    text-align: justify; } }
+
+@media screen and (min-width: 75em) {
+  ._styles_xlarge-text-left {
+    text-align: left; }
+  ._styles_xlarge-text-right {
+    text-align: right; }
+  ._styles_xlarge-text-center {
+    text-align: center; }
+  ._styles_xlarge-text-justify {
+    text-align: justify; } }
+
+@media screen and (min-width: 90em) {
+  ._styles_xxlarge-text-left {
+    text-align: left; }
+  ._styles_xxlarge-text-right {
+    text-align: right; }
+  ._styles_xxlarge-text-center {
+    text-align: center; }
+  ._styles_xxlarge-text-justify {
+    text-align: justify; } }
+
+/*# sourceMappingURL=TextAlignment.css.map*/
