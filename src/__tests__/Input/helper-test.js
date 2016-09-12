@@ -7,7 +7,7 @@ import * as helper from 'Input/helper';
 
 const validProps = {
   disabled: true,
-  validationState: 'success'
+  isValid: true
 };
 
 describe('Input helpers', () => {

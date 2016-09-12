@@ -9,7 +9,7 @@
     "build": "rm -rf dist && webpack",
     "lint": "eslint --fix --config .eslintrc src",
     "lint-ci": "eslint -c .eslintrc src -f junit -o $CIRCLE_TEST_REPORTS/eslint/report.xml",
-    "prepush": "npm run lint && npm test",
+    "precommit": "npm run build && npm run lint && npm test",
     "test": "karma start --single-run",
     "watch-test": "karma start",
     "compile": "babel --presets es2015,react,stage-0 -d lib/ src/ && cpy \"**/*.scss\" ../lib --parents --cwd=src"
