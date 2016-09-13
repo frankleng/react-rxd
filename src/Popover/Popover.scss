@@ -1,0 +1,197 @@
+@import "../common";
+
+.popover {
+  filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.27));
+  height: auto;
+  width: 200px;
+  transform: translate(-50%, 20px);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.22, 1.275) 0.01s;
+  background-color: $white;
+  border-radius: $base-border-radius;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.04);
+  left: 50%;
+  opacity: 0;
+  padding: 20px;
+  position: absolute;
+  visibility: hidden;
+  &:after {
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    height: 0;
+    width: 0;
+    border-bottom: 6px solid $white;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    content: '';
+    margin-left: -3px;
+  }
+}
+
+.medium {
+  height: auto;
+  width: 300px;
+}
+.large {
+  height: auto;
+  width: 400px;
+}
+.xlarge {
+  height: auto;
+  width: 500px;
+}
+
+.bottomleft {
+  transform: translateY(20px);
+  left: initial;
+  right: 0;
+  &:after {
+    position: absolute;
+    top: -6px;
+    right: 20px;
+    left: initial;
+  }
+}
+.bottomright {
+  transform: translate(0%, 20px);
+  left: 0;
+  right: initial;
+  &:after {
+    position: absolute;
+    top: -6px;
+    left: 20px;
+  }
+}
+.top {
+  transform: translate(-50%, -100%);
+  left: 50%;
+  top: -20px;
+  &:after {
+    position: absolute;
+    top: initial;
+    bottom: -6px;
+    left: 50%;
+    height: 0;
+    width: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid $white;
+    margin-left: -3px;
+  }
+}
+
+.righttop {
+  transform: translate(100%, -100%);
+  top: initial;
+}
+.rightbottom {
+  transform: translate(100%, 0%);
+  top: 0;
+}
+
+.topleft {
+  transform: translateY(-100%);
+  left: initial;
+  right: 0;
+  top: -20px;
+  &:after {
+    position: absolute;
+    top: initial;
+    right: 20px;
+    bottom: -6px;
+    left: initial;
+    height: 0;
+    width: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #fff;
+    margin-left: -3px;
+  }
+}
+.topright {
+  transform: translateY(-100%);
+  left: 0;
+  top: -20px;
+  &:after {
+    position: absolute;
+    top: initial;
+    bottom: -6px;
+    left: 20px;
+    height: 0;
+    width: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid $white;
+    margin-left: -3px;
+  }
+}
+
+.topleft:after, .top:after, .topright:after {
+  border-bottom: 0;
+}
+
+.left, .lefttop, .leftbottom {
+  transform: translate(-100%, -50%);
+  bottom: initial;
+  left: -20px;
+  top: 50%;
+}
+.left:after, .lefttop:after, .leftbottom:after {
+  position: absolute;
+  top: 50%;
+  right: -12px;
+  left: initial;
+  height: 0;
+  width: 0;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid $white;
+  border-top: 6px solid transparent;
+  margin-top: -6px;
+}
+.lefttop {
+  -webkit-transform: translate(-100%, -100%);
+  -moz-transform: translate(-100%, -100%);
+  -ms-transform: translate(-100%, -100%);
+  -o-transform: translate(-100%, -100%);
+  transform: translate(-100%, -100%);
+  top: initial;
+}
+.leftbottom {
+  -webkit-transform: translate(-100%, 0%);
+  -moz-transform: translate(-100%, 0%);
+  -ms-transform: translate(-100%, 0%);
+  -o-transform: translate(-100%, 0%);
+  transform: translate(-100%, 0%);
+  top: 0;
+}
+.right, .righttop, .rightbottom {
+  -webkit-transform: translate(100%, -50%);
+  -moz-transform: translate(100%, -50%);
+  -ms-transform: translate(100%, -50%);
+  -o-transform: translate(100%, -50%);
+  transform: translate(100%, -50%);
+  bottom: initial;
+  left: initial;
+  right: -20px;
+  top: 50%;
+}
+.right:after, .righttop:after, .rightbottom:after {
+  position: absolute;
+  top: 50%;
+  left: -9px;
+  height: 0;
+  width: 0;
+  border-bottom: 6px solid transparent;
+  border-right: 6px solid $white;
+  border-top: 6px solid transparent;
+  margin-top: -6px;
+}
+
+.lefttop:after, .righttop:after {
+  bottom: 20px;
+  margin-bottom: -6px;
+  top: initial;
+}
+.leftbottom:after, .rightbottom:after {
+  top: 20px;
+}

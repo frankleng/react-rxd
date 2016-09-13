@@ -79,7 +79,8 @@ module.exports =
 	  scaleToRelative: React.PropTypes.bool,
 	  cover: React.PropTypes.bool,
 	  darken: React.PropTypes.number, // percentage of black opacity
-	  centered: React.PropTypes.bool
+	  centered: React.PropTypes.bool,
+	  fixed: React.PropTypes.bool
 	};
 	
 	exports.default = Background;
@@ -804,7 +805,7 @@ module.exports =
 
 	'use strict';
 	
-	module.exports = __webpack_require__(33);
+	module.exports = __webpack_require__(29);
 
 
 /***/ },
@@ -945,7 +946,7 @@ module.exports =
 	'use strict';
 	
 	var ReactNoopUpdateQueue = __webpack_require__(16);
-	var ReactInstrumentation = __webpack_require__(38);
+	var ReactInstrumentation = __webpack_require__(34);
 	
 	var canDefineProperty = __webpack_require__(8);
 	var emptyObject = __webpack_require__(12);
@@ -1471,7 +1472,7 @@ module.exports =
 
 /***/ },
 
-/***/ 26:
+/***/ 22:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1511,7 +1512,7 @@ module.exports =
 
 /***/ },
 
-/***/ 27:
+/***/ 23:
 /***/ function(module, exports) {
 
 	/**
@@ -1567,7 +1568,7 @@ module.exports =
 
 /***/ },
 
-/***/ 28:
+/***/ 24:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -1595,7 +1596,7 @@ module.exports =
 
 /***/ },
 
-/***/ 29:
+/***/ 25:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1611,7 +1612,7 @@ module.exports =
 	 * @typechecks
 	 */
 	
-	var performance = __webpack_require__(28);
+	var performance = __webpack_require__(24);
 	
 	var performanceNow;
 	
@@ -1634,7 +1635,7 @@ module.exports =
 
 /***/ },
 
-/***/ 31:
+/***/ 27:
 /***/ function(module, exports) {
 
 	/**
@@ -1698,7 +1699,7 @@ module.exports =
 
 /***/ },
 
-/***/ 32:
+/***/ 28:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -1823,7 +1824,7 @@ module.exports =
 
 /***/ },
 
-/***/ 33:
+/***/ 29:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -1841,16 +1842,16 @@ module.exports =
 	
 	var _assign = __webpack_require__(5);
 	
-	var ReactChildren = __webpack_require__(34);
+	var ReactChildren = __webpack_require__(30);
 	var ReactComponent = __webpack_require__(14);
-	var ReactClass = __webpack_require__(35);
-	var ReactDOMFactories = __webpack_require__(36);
+	var ReactClass = __webpack_require__(31);
+	var ReactDOMFactories = __webpack_require__(32);
 	var ReactElement = __webpack_require__(2);
 	var ReactElementValidator = __webpack_require__(15);
-	var ReactPropTypes = __webpack_require__(39);
-	var ReactVersion = __webpack_require__(40);
+	var ReactPropTypes = __webpack_require__(35);
+	var ReactVersion = __webpack_require__(36);
 	
-	var onlyChild = __webpack_require__(41);
+	var onlyChild = __webpack_require__(37);
 	var warning = __webpack_require__(1);
 	
 	var createElement = ReactElement.createElement;
@@ -1916,7 +1917,7 @@ module.exports =
 
 /***/ },
 
-/***/ 34:
+/***/ 30:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -1932,11 +1933,11 @@ module.exports =
 	
 	'use strict';
 	
-	var PooledClass = __webpack_require__(32);
+	var PooledClass = __webpack_require__(28);
 	var ReactElement = __webpack_require__(2);
 	
 	var emptyFunction = __webpack_require__(4);
-	var traverseAllChildren = __webpack_require__(42);
+	var traverseAllChildren = __webpack_require__(38);
 	
 	var twoArgumentPooler = PooledClass.twoArgumentPooler;
 	var fourArgumentPooler = PooledClass.fourArgumentPooler;
@@ -2113,7 +2114,7 @@ module.exports =
 
 /***/ },
 
-/***/ 35:
+/***/ 31:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -2140,7 +2141,7 @@ module.exports =
 	var emptyObject = __webpack_require__(12);
 	var invariant = __webpack_require__(3);
 	var keyMirror = __webpack_require__(13);
-	var keyOf = __webpack_require__(26);
+	var keyOf = __webpack_require__(22);
 	var warning = __webpack_require__(1);
 	
 	var MIXINS_KEY = keyOf({ mixins: null });
@@ -2843,7 +2844,7 @@ module.exports =
 
 /***/ },
 
-/***/ 36:
+/***/ 32:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -2862,7 +2863,7 @@ module.exports =
 	var ReactElement = __webpack_require__(2);
 	var ReactElementValidator = __webpack_require__(15);
 	
-	var mapObject = __webpack_require__(27);
+	var mapObject = __webpack_require__(23);
 	
 	/**
 	 * Create a factory that creates HTML tag elements.
@@ -3025,7 +3026,7 @@ module.exports =
 
 /***/ },
 
-/***/ 37:
+/***/ 33:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -3043,7 +3044,7 @@ module.exports =
 	
 	var ExecutionEnvironment = __webpack_require__(11);
 	
-	var performanceNow = __webpack_require__(29);
+	var performanceNow = __webpack_require__(25);
 	var warning = __webpack_require__(1);
 	
 	var eventHandlers = [];
@@ -3281,7 +3282,7 @@ module.exports =
 
 /***/ },
 
-/***/ 38:
+/***/ 34:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -3297,13 +3298,13 @@ module.exports =
 	
 	'use strict';
 	
-	var ReactDebugTool = __webpack_require__(37);
+	var ReactDebugTool = __webpack_require__(33);
 	
 	module.exports = { debugTool: ReactDebugTool };
 
 /***/ },
 
-/***/ 39:
+/***/ 35:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -3689,7 +3690,7 @@ module.exports =
 
 /***/ },
 
-/***/ 40:
+/***/ 36:
 /***/ function(module, exports) {
 
 	/**
@@ -3709,7 +3710,7 @@ module.exports =
 
 /***/ },
 
-/***/ 41:
+/***/ 37:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -3751,7 +3752,7 @@ module.exports =
 
 /***/ },
 
-/***/ 42:
+/***/ 38:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -3772,7 +3773,7 @@ module.exports =
 	
 	var getIteratorFn = __webpack_require__(9);
 	var invariant = __webpack_require__(3);
-	var KeyEscapeUtils = __webpack_require__(31);
+	var KeyEscapeUtils = __webpack_require__(27);
 	var warning = __webpack_require__(1);
 	
 	var SEPARATOR = '.';
@@ -3928,7 +3929,7 @@ module.exports =
 	/**
 	 * Created by frank on 6/22/16.
 	 */
-	var styles = __webpack_require__(228);
+	var styles = __webpack_require__(229);
 	exports.styles = styles;
 	
 	/**
@@ -3943,6 +3944,7 @@ module.exports =
 	  if (props.noRepeat) classNames.push(styles.noRepeat);
 	  if (props.cover) classNames.push(styles.cover);
 	  if (props.centered) classNames.push(styles.center);
+	  if (props.fixed) classNames.push(styles.fixed);
 	  if (props.className) classNames.push(props.className);
 	
 	  return classNames.join(' ');
@@ -3956,11 +3958,11 @@ module.exports =
 
 /***/ },
 
-/***/ 228:
+/***/ 229:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"fullScreen":"Background_fullScreen","scaleToRelative":"Background_scaleToRelative","noRepeat":"Background_noRepeat","cover":"Background_cover","center":"Background_center"};
+	module.exports = {"fullScreen":"Background_fullScreen","scaleToRelative":"Background_scaleToRelative","noRepeat":"Background_noRepeat","cover":"Background_cover","center":"Background_center","fixed":"Background_fixed"};
 
 /***/ }
 

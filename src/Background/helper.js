@@ -15,6 +15,7 @@ export function getBackgroundClassnameFromProps(props) {
   if (props.noRepeat) classNames.push(styles.noRepeat);
   if (props.cover) classNames.push(styles.cover);
   if (props.centered) classNames.push(styles.center);
+  if (props.fixed) classNames.push(styles.fixed);
   if (props.className) classNames.push(props.className);
 
   return classNames.join(' ');

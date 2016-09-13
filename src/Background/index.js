@@ -20,7 +20,8 @@ Background.propTypes = {
   scaleToRelative: React.PropTypes.bool,
   cover: React.PropTypes.bool,
   darken: React.PropTypes.number,  // percentage of black opacity
-  centered: React.PropTypes.bool
+  centered: React.PropTypes.bool,
+  fixed: React.PropTypes.bool
 };
 
 export default Background;
