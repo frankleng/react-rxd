@@ -50,7 +50,7 @@ module.exports =
 	/**
 	 * Created by frank on 7/26/16.
 	 */
-	var TextAlignment = __webpack_require__(240);
+	var TextAlignment = __webpack_require__(242);
 	module.exports = TextAlignment;
 
 /***/ },
@@ -763,7 +763,7 @@ module.exports =
 
 	'use strict';
 	
-	module.exports = __webpack_require__(33);
+	module.exports = __webpack_require__(29);
 
 
 /***/ },
@@ -900,7 +900,7 @@ module.exports =
 	'use strict';
 	
 	var ReactNoopUpdateQueue = __webpack_require__(16);
-	var ReactInstrumentation = __webpack_require__(38);
+	var ReactInstrumentation = __webpack_require__(34);
 	
 	var canDefineProperty = __webpack_require__(8);
 	var emptyObject = __webpack_require__(12);
@@ -1466,165 +1466,6 @@ module.exports =
 /* 22 */
 /***/ function(module, exports) {
 
-	/**
-	 * Checks if `value` is object-like. A value is object-like if it's not `null`
-	 * and has a `typeof` result of "object".
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
-	 * @example
-	 *
-	 * _.isObjectLike({});
-	 * // => true
-	 *
-	 * _.isObjectLike([1, 2, 3]);
-	 * // => true
-	 *
-	 * _.isObjectLike(_.noop);
-	 * // => false
-	 *
-	 * _.isObjectLike(null);
-	 * // => false
-	 */
-	function isObjectLike(value) {
-	  return !!value && typeof value == 'object';
-	}
-	
-	module.exports = isObjectLike;
-
-
-/***/ },
-/* 23 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var anObject       = __webpack_require__(45)
-	  , IE8_DOM_DEFINE = __webpack_require__(96)
-	  , toPrimitive    = __webpack_require__(102)
-	  , dP             = Object.defineProperty;
-	
-	exports.f = __webpack_require__(21) ? Object.defineProperty : function defineProperty(O, P, Attributes){
-	  anObject(O);
-	  P = toPrimitive(P, true);
-	  anObject(Attributes);
-	  if(IE8_DOM_DEFINE)try {
-	    return dP(O, P, Attributes);
-	  } catch(e){ /* empty */ }
-	  if('get' in Attributes || 'set' in Attributes)throw TypeError('Accessors not supported!');
-	  if('value' in Attributes)O[P] = Attributes.value;
-	  return O;
-	};
-
-/***/ },
-/* 24 */
-/***/ function(module, exports) {
-
-	/**
-	 * Checks if `value` is the
-	 * [language type](http://www.ecma-international.org/ecma-262/6.0/#sec-ecmascript-language-types)
-	 * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 0.1.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is an object, else `false`.
-	 * @example
-	 *
-	 * _.isObject({});
-	 * // => true
-	 *
-	 * _.isObject([1, 2, 3]);
-	 * // => true
-	 *
-	 * _.isObject(_.noop);
-	 * // => true
-	 *
-	 * _.isObject(null);
-	 * // => false
-	 */
-	function isObject(value) {
-	  var type = typeof value;
-	  return !!value && (type == 'object' || type == 'function');
-	}
-	
-	module.exports = isObject;
-
-
-/***/ },
-/* 25 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var global    = __webpack_require__(20)
-	  , core      = __webpack_require__(19)
-	  , ctx       = __webpack_require__(66)
-	  , hide      = __webpack_require__(47)
-	  , PROTOTYPE = 'prototype';
-	
-	var $export = function(type, name, source){
-	  var IS_FORCED = type & $export.F
-	    , IS_GLOBAL = type & $export.G
-	    , IS_STATIC = type & $export.S
-	    , IS_PROTO  = type & $export.P
-	    , IS_BIND   = type & $export.B
-	    , IS_WRAP   = type & $export.W
-	    , exports   = IS_GLOBAL ? core : core[name] || (core[name] = {})
-	    , expProto  = exports[PROTOTYPE]
-	    , target    = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE]
-	    , key, own, out;
-	  if(IS_GLOBAL)source = name;
-	  for(key in source){
-	    // contains in native
-	    own = !IS_FORCED && target && target[key] !== undefined;
-	    if(own && key in exports)continue;
-	    // export native or passed
-	    out = own ? target[key] : source[key];
-	    // prevent global pollution for namespaces
-	    exports[key] = IS_GLOBAL && typeof target[key] != 'function' ? source[key]
-	    // bind timers to global for call from export context
-	    : IS_BIND && own ? ctx(out, global)
-	    // wrap global constructors for prevent change them in library
-	    : IS_WRAP && target[key] == out ? (function(C){
-	      var F = function(a, b, c){
-	        if(this instanceof C){
-	          switch(arguments.length){
-	            case 0: return new C;
-	            case 1: return new C(a);
-	            case 2: return new C(a, b);
-	          } return new C(a, b, c);
-	        } return C.apply(this, arguments);
-	      };
-	      F[PROTOTYPE] = C[PROTOTYPE];
-	      return F;
-	    // make static versions for prototype methods
-	    })(out) : IS_PROTO && typeof out == 'function' ? ctx(Function.call, out) : out;
-	    // export proto methods to core.%CONSTRUCTOR%.methods.%NAME%
-	    if(IS_PROTO){
-	      (exports.virtual || (exports.virtual = {}))[key] = out;
-	      // export proto methods to core.%CONSTRUCTOR%.prototype.%NAME%
-	      if(type & $export.R && expProto && !expProto[key])hide(expProto, key, out);
-	    }
-	  }
-	};
-	// type bitmap
-	$export.F = 1;   // forced
-	$export.G = 2;   // global
-	$export.S = 4;   // static
-	$export.P = 8;   // proto
-	$export.B = 16;  // bind
-	$export.W = 32;  // wrap
-	$export.U = 64;  // safe
-	$export.R = 128; // real proto method for `library` 
-	module.exports = $export;
-
-/***/ },
-/* 26 */
-/***/ function(module, exports) {
-
 	"use strict";
 	
 	/**
@@ -1661,7 +1502,7 @@ module.exports =
 	module.exports = keyOf;
 
 /***/ },
-/* 27 */
+/* 23 */
 /***/ function(module, exports) {
 
 	/**
@@ -1716,7 +1557,7 @@ module.exports =
 	module.exports = mapObject;
 
 /***/ },
-/* 28 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -1743,7 +1584,7 @@ module.exports =
 	module.exports = performance || {};
 
 /***/ },
-/* 29 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1759,7 +1600,7 @@ module.exports =
 	 * @typechecks
 	 */
 	
-	var performance = __webpack_require__(28);
+	var performance = __webpack_require__(24);
 	
 	var performanceNow;
 	
@@ -1781,47 +1622,42 @@ module.exports =
 	module.exports = performanceNow;
 
 /***/ },
-/* 30 */
-/***/ function(module, exports, __webpack_require__) {
+/* 26 */
+/***/ function(module, exports) {
 
-	var getLength = __webpack_require__(75),
-	    isFunction = __webpack_require__(44),
-	    isLength = __webpack_require__(50);
-	
 	/**
-	 * Checks if `value` is array-like. A value is considered array-like if it's
-	 * not a function and has a `value.length` that's an integer greater than or
-	 * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
+	 * Checks if `value` is object-like. A value is object-like if it's not `null`
+	 * and has a `typeof` result of "object".
 	 *
 	 * @static
 	 * @memberOf _
 	 * @since 4.0.0
 	 * @category Lang
 	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+	 * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
 	 * @example
 	 *
-	 * _.isArrayLike([1, 2, 3]);
+	 * _.isObjectLike({});
 	 * // => true
 	 *
-	 * _.isArrayLike(document.body.children);
+	 * _.isObjectLike([1, 2, 3]);
 	 * // => true
 	 *
-	 * _.isArrayLike('abc');
-	 * // => true
+	 * _.isObjectLike(_.noop);
+	 * // => false
 	 *
-	 * _.isArrayLike(_.noop);
+	 * _.isObjectLike(null);
 	 * // => false
 	 */
-	function isArrayLike(value) {
-	  return value != null && isLength(getLength(value)) && !isFunction(value);
+	function isObjectLike(value) {
+	  return !!value && typeof value == 'object';
 	}
 	
-	module.exports = isArrayLike;
+	module.exports = isObjectLike;
 
 
 /***/ },
-/* 31 */
+/* 27 */
 /***/ function(module, exports) {
 
 	/**
@@ -1884,7 +1720,7 @@ module.exports =
 	module.exports = KeyEscapeUtils;
 
 /***/ },
-/* 32 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -2008,7 +1844,7 @@ module.exports =
 	module.exports = PooledClass;
 
 /***/ },
-/* 33 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -2026,16 +1862,16 @@ module.exports =
 	
 	var _assign = __webpack_require__(5);
 	
-	var ReactChildren = __webpack_require__(34);
+	var ReactChildren = __webpack_require__(30);
 	var ReactComponent = __webpack_require__(14);
-	var ReactClass = __webpack_require__(35);
-	var ReactDOMFactories = __webpack_require__(36);
+	var ReactClass = __webpack_require__(31);
+	var ReactDOMFactories = __webpack_require__(32);
 	var ReactElement = __webpack_require__(2);
 	var ReactElementValidator = __webpack_require__(15);
-	var ReactPropTypes = __webpack_require__(39);
-	var ReactVersion = __webpack_require__(40);
+	var ReactPropTypes = __webpack_require__(35);
+	var ReactVersion = __webpack_require__(36);
 	
-	var onlyChild = __webpack_require__(41);
+	var onlyChild = __webpack_require__(37);
 	var warning = __webpack_require__(1);
 	
 	var createElement = ReactElement.createElement;
@@ -2100,7 +1936,7 @@ module.exports =
 	module.exports = React;
 
 /***/ },
-/* 34 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -2116,11 +1952,11 @@ module.exports =
 	
 	'use strict';
 	
-	var PooledClass = __webpack_require__(32);
+	var PooledClass = __webpack_require__(28);
 	var ReactElement = __webpack_require__(2);
 	
 	var emptyFunction = __webpack_require__(4);
-	var traverseAllChildren = __webpack_require__(42);
+	var traverseAllChildren = __webpack_require__(38);
 	
 	var twoArgumentPooler = PooledClass.twoArgumentPooler;
 	var fourArgumentPooler = PooledClass.fourArgumentPooler;
@@ -2296,7 +2132,7 @@ module.exports =
 	module.exports = ReactChildren;
 
 /***/ },
-/* 35 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -2323,7 +2159,7 @@ module.exports =
 	var emptyObject = __webpack_require__(12);
 	var invariant = __webpack_require__(3);
 	var keyMirror = __webpack_require__(13);
-	var keyOf = __webpack_require__(26);
+	var keyOf = __webpack_require__(22);
 	var warning = __webpack_require__(1);
 	
 	var MIXINS_KEY = keyOf({ mixins: null });
@@ -3025,7 +2861,7 @@ module.exports =
 	module.exports = ReactClass;
 
 /***/ },
-/* 36 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -3044,7 +2880,7 @@ module.exports =
 	var ReactElement = __webpack_require__(2);
 	var ReactElementValidator = __webpack_require__(15);
 	
-	var mapObject = __webpack_require__(27);
+	var mapObject = __webpack_require__(23);
 	
 	/**
 	 * Create a factory that creates HTML tag elements.
@@ -3206,7 +3042,7 @@ module.exports =
 	module.exports = ReactDOMFactories;
 
 /***/ },
-/* 37 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -3224,7 +3060,7 @@ module.exports =
 	
 	var ExecutionEnvironment = __webpack_require__(11);
 	
-	var performanceNow = __webpack_require__(29);
+	var performanceNow = __webpack_require__(25);
 	var warning = __webpack_require__(1);
 	
 	var eventHandlers = [];
@@ -3461,7 +3297,7 @@ module.exports =
 	module.exports = ReactDebugTool;
 
 /***/ },
-/* 38 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -3477,12 +3313,12 @@ module.exports =
 	
 	'use strict';
 	
-	var ReactDebugTool = __webpack_require__(37);
+	var ReactDebugTool = __webpack_require__(33);
 	
 	module.exports = { debugTool: ReactDebugTool };
 
 /***/ },
-/* 39 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -3867,7 +3703,7 @@ module.exports =
 	module.exports = ReactPropTypes;
 
 /***/ },
-/* 40 */
+/* 36 */
 /***/ function(module, exports) {
 
 	/**
@@ -3886,7 +3722,7 @@ module.exports =
 	module.exports = '15.1.0';
 
 /***/ },
-/* 41 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -3927,7 +3763,7 @@ module.exports =
 	module.exports = onlyChild;
 
 /***/ },
-/* 42 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -3948,7 +3784,7 @@ module.exports =
 	
 	var getIteratorFn = __webpack_require__(9);
 	var invariant = __webpack_require__(3);
-	var KeyEscapeUtils = __webpack_require__(31);
+	var KeyEscapeUtils = __webpack_require__(27);
 	var warning = __webpack_require__(1);
 	
 	var SEPARATOR = '.';
@@ -4090,6 +3926,170 @@ module.exports =
 	module.exports = traverseAllChildren;
 
 /***/ },
+/* 39 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var anObject       = __webpack_require__(45)
+	  , IE8_DOM_DEFINE = __webpack_require__(96)
+	  , toPrimitive    = __webpack_require__(102)
+	  , dP             = Object.defineProperty;
+	
+	exports.f = __webpack_require__(21) ? Object.defineProperty : function defineProperty(O, P, Attributes){
+	  anObject(O);
+	  P = toPrimitive(P, true);
+	  anObject(Attributes);
+	  if(IE8_DOM_DEFINE)try {
+	    return dP(O, P, Attributes);
+	  } catch(e){ /* empty */ }
+	  if('get' in Attributes || 'set' in Attributes)throw TypeError('Accessors not supported!');
+	  if('value' in Attributes)O[P] = Attributes.value;
+	  return O;
+	};
+
+/***/ },
+/* 40 */
+/***/ function(module, exports) {
+
+	/**
+	 * Checks if `value` is the
+	 * [language type](http://www.ecma-international.org/ecma-262/6.0/#sec-ecmascript-language-types)
+	 * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 0.1.0
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+	 * @example
+	 *
+	 * _.isObject({});
+	 * // => true
+	 *
+	 * _.isObject([1, 2, 3]);
+	 * // => true
+	 *
+	 * _.isObject(_.noop);
+	 * // => true
+	 *
+	 * _.isObject(null);
+	 * // => false
+	 */
+	function isObject(value) {
+	  var type = typeof value;
+	  return !!value && (type == 'object' || type == 'function');
+	}
+	
+	module.exports = isObject;
+
+
+/***/ },
+/* 41 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var global    = __webpack_require__(20)
+	  , core      = __webpack_require__(19)
+	  , ctx       = __webpack_require__(66)
+	  , hide      = __webpack_require__(47)
+	  , PROTOTYPE = 'prototype';
+	
+	var $export = function(type, name, source){
+	  var IS_FORCED = type & $export.F
+	    , IS_GLOBAL = type & $export.G
+	    , IS_STATIC = type & $export.S
+	    , IS_PROTO  = type & $export.P
+	    , IS_BIND   = type & $export.B
+	    , IS_WRAP   = type & $export.W
+	    , exports   = IS_GLOBAL ? core : core[name] || (core[name] = {})
+	    , expProto  = exports[PROTOTYPE]
+	    , target    = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE]
+	    , key, own, out;
+	  if(IS_GLOBAL)source = name;
+	  for(key in source){
+	    // contains in native
+	    own = !IS_FORCED && target && target[key] !== undefined;
+	    if(own && key in exports)continue;
+	    // export native or passed
+	    out = own ? target[key] : source[key];
+	    // prevent global pollution for namespaces
+	    exports[key] = IS_GLOBAL && typeof target[key] != 'function' ? source[key]
+	    // bind timers to global for call from export context
+	    : IS_BIND && own ? ctx(out, global)
+	    // wrap global constructors for prevent change them in library
+	    : IS_WRAP && target[key] == out ? (function(C){
+	      var F = function(a, b, c){
+	        if(this instanceof C){
+	          switch(arguments.length){
+	            case 0: return new C;
+	            case 1: return new C(a);
+	            case 2: return new C(a, b);
+	          } return new C(a, b, c);
+	        } return C.apply(this, arguments);
+	      };
+	      F[PROTOTYPE] = C[PROTOTYPE];
+	      return F;
+	    // make static versions for prototype methods
+	    })(out) : IS_PROTO && typeof out == 'function' ? ctx(Function.call, out) : out;
+	    // export proto methods to core.%CONSTRUCTOR%.methods.%NAME%
+	    if(IS_PROTO){
+	      (exports.virtual || (exports.virtual = {}))[key] = out;
+	      // export proto methods to core.%CONSTRUCTOR%.prototype.%NAME%
+	      if(type & $export.R && expProto && !expProto[key])hide(expProto, key, out);
+	    }
+	  }
+	};
+	// type bitmap
+	$export.F = 1;   // forced
+	$export.G = 2;   // global
+	$export.S = 4;   // static
+	$export.P = 8;   // proto
+	$export.B = 16;  // bind
+	$export.W = 32;  // wrap
+	$export.U = 64;  // safe
+	$export.R = 128; // real proto method for `library` 
+	module.exports = $export;
+
+/***/ },
+/* 42 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var getLength = __webpack_require__(75),
+	    isFunction = __webpack_require__(44),
+	    isLength = __webpack_require__(50);
+	
+	/**
+	 * Checks if `value` is array-like. A value is considered array-like if it's
+	 * not a function and has a `value.length` that's an integer greater than or
+	 * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 4.0.0
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+	 * @example
+	 *
+	 * _.isArrayLike([1, 2, 3]);
+	 * // => true
+	 *
+	 * _.isArrayLike(document.body.children);
+	 * // => true
+	 *
+	 * _.isArrayLike('abc');
+	 * // => true
+	 *
+	 * _.isArrayLike(_.noop);
+	 * // => false
+	 */
+	function isArrayLike(value) {
+	  return value != null && isLength(getLength(value)) && !isFunction(value);
+	}
+	
+	module.exports = isArrayLike;
+
+
+/***/ },
 /* 43 */
 /***/ function(module, exports) {
 
@@ -4101,7 +4101,7 @@ module.exports =
 /* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isObject = __webpack_require__(24);
+	var isObject = __webpack_require__(40);
 	
 	/** `Object#toString` result references. */
 	var funcTag = '[object Function]',
@@ -4169,7 +4169,7 @@ module.exports =
 /* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var dP         = __webpack_require__(23)
+	var dP         = __webpack_require__(39)
 	  , createDesc = __webpack_require__(54);
 	module.exports = __webpack_require__(21) ? function(object, key, value){
 	  return dP.f(object, key, createDesc(1, value));
@@ -4385,7 +4385,7 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
 	var isArray = __webpack_require__(48),
-	    isObjectLike = __webpack_require__(22);
+	    isObjectLike = __webpack_require__(26);
 	
 	/** `Object#toString` result references. */
 	var stringTag = '[object String]';
@@ -4430,7 +4430,7 @@ module.exports =
 /* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isObjectLike = __webpack_require__(22);
+	var isObjectLike = __webpack_require__(26);
 	
 	/** `Object#toString` result references. */
 	var symbolTag = '[object Symbol]';
@@ -4794,7 +4794,7 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
 	var isFunction = __webpack_require__(44),
-	    isObject = __webpack_require__(24),
+	    isObject = __webpack_require__(40),
 	    isSymbol = __webpack_require__(59);
 	
 	/** Used as references for various `Number` constants. */
@@ -5136,7 +5136,7 @@ module.exports =
 /* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var def = __webpack_require__(23).f
+	var def = __webpack_require__(39).f
 	  , has = __webpack_require__(46)
 	  , TAG = __webpack_require__(18)('toStringTag');
 	
@@ -5288,7 +5288,7 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
 	var baseIndexOf = __webpack_require__(84),
-	    isArrayLike = __webpack_require__(30),
+	    isArrayLike = __webpack_require__(42),
 	    isString = __webpack_require__(58),
 	    toInteger = __webpack_require__(79),
 	    values = __webpack_require__(138);
@@ -5346,8 +5346,8 @@ module.exports =
 /* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isArrayLike = __webpack_require__(30),
-	    isObjectLike = __webpack_require__(22);
+	var isArrayLike = __webpack_require__(42),
+	    isObjectLike = __webpack_require__(26);
 	
 	/**
 	 * This method is like `_.isArrayLike` except that it also checks if `value`
@@ -5591,7 +5591,7 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.3.1 Object.assign(target, source)
-	var $export = __webpack_require__(25);
+	var $export = __webpack_require__(41);
 	
 	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(97)});
 
@@ -5799,7 +5799,7 @@ module.exports =
 	var baseHas = __webpack_require__(134),
 	    baseKeys = __webpack_require__(135),
 	    indexKeys = __webpack_require__(87),
-	    isArrayLike = __webpack_require__(30),
+	    isArrayLike = __webpack_require__(42),
 	    isIndex = __webpack_require__(62),
 	    isPrototype = __webpack_require__(78);
 	
@@ -5940,7 +5940,7 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var $defineProperty = __webpack_require__(23)
+	var $defineProperty = __webpack_require__(39)
 	  , createDesc      = __webpack_require__(54);
 	
 	module.exports = function(object, index, value){
@@ -6008,7 +6008,7 @@ module.exports =
 
 	'use strict';
 	var LIBRARY        = __webpack_require__(124)
-	  , $export        = __webpack_require__(25)
+	  , $export        = __webpack_require__(41)
 	  , redefine       = __webpack_require__(128)
 	  , hide           = __webpack_require__(47)
 	  , has            = __webpack_require__(46)
@@ -6158,7 +6158,7 @@ module.exports =
 /* 126 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var dP       = __webpack_require__(23)
+	var dP       = __webpack_require__(39)
 	  , anObject = __webpack_require__(45)
 	  , getKeys  = __webpack_require__(69);
 	
@@ -6237,7 +6237,7 @@ module.exports =
 
 	'use strict';
 	var ctx            = __webpack_require__(66)
-	  , $export        = __webpack_require__(25)
+	  , $export        = __webpack_require__(41)
 	  , toObject       = __webpack_require__(56)
 	  , call           = __webpack_require__(120)
 	  , isArrayIter    = __webpack_require__(119)
@@ -6603,7 +6603,7 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.1.2.3 Number.isInteger(number)
-	var $export = __webpack_require__(25);
+	var $export = __webpack_require__(41);
 	
 	$export($export.S, 'Number', {isInteger: __webpack_require__(145)});
 
@@ -6704,14 +6704,14 @@ module.exports =
 /* 217 */,
 /* 218 */,
 /* 219 */,
-/* 220 */
+/* 220 */,
+/* 221 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"text-left":"_styles_text-left","text-right":"_styles_text-right","text-center":"_styles_text-center","text-justify":"_styles_text-justify","medium-text-left":"_styles_medium-text-left","medium-text-right":"_styles_medium-text-right","medium-text-center":"_styles_medium-text-center","medium-text-justify":"_styles_medium-text-justify","large-text-left":"_styles_large-text-left","large-text-right":"_styles_large-text-right","large-text-center":"_styles_large-text-center","large-text-justify":"_styles_large-text-justify","xlarge-text-left":"_styles_xlarge-text-left","xlarge-text-right":"_styles_xlarge-text-right","xlarge-text-center":"_styles_xlarge-text-center","xlarge-text-justify":"_styles_xlarge-text-justify","xxlarge-text-left":"_styles_xxlarge-text-left","xxlarge-text-right":"_styles_xxlarge-text-right","xxlarge-text-center":"_styles_xxlarge-text-center","xxlarge-text-justify":"_styles_xxlarge-text-justify"};
 
 /***/ },
-/* 221 */,
 /* 222 */,
 /* 223 */,
 /* 224 */,
@@ -6730,7 +6730,9 @@ module.exports =
 /* 237 */,
 /* 238 */,
 /* 239 */,
-/* 240 */
+/* 240 */,
+/* 241 */,
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6748,7 +6750,7 @@ module.exports =
 	
 	var _screenSize = __webpack_require__(140);
 	
-	var _styles = __webpack_require__(220);
+	var _styles = __webpack_require__(221);
 	
 	var _styles2 = _interopRequireDefault(_styles);
 	

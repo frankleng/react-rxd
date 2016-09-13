@@ -27,4 +27,7 @@
 .Background_center {
   background-position: center center; }
 
+.Background_fixed {
+  background-attachment: fixed; }
+
 /*# sourceMappingURL=Background.css.map*/

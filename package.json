@@ -15,8 +15,9 @@
     "compile": "babel --presets es2015,react,stage-0 -d lib/ src/ && cpy \"**/*.scss\" ../lib --parents --cwd=src"
   },
   "main": "dist/",
+  "files": ["dist"],
   "license": "MIT",
-  "version": "0.0.12",
+  "version": "1.0.1",
   "dependencies": {
     "autoprefixer": "^6.3.6",
     "babel-cli": "^6.14.0",
@@ -40,7 +41,6 @@
     "jsontosass-loader": "^0.1.8",
     "lodash": "^4.13.1",
     "node-bourbon": "^4.2.8",
-    "node-sass": "^3.8.0",
     "postcss-loader": "^0.9.1",
     "react": "^15.1.0",
     "react-click-outside": "^2.1.0",
@@ -71,6 +71,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.7.0",
     "mocha": "^2.5.3",
+    "node-sass": "^3.9.3",
     "phantomjs-prebuilt": "^2.1.7",
     "postcss-import": "^8.1.2",
     "react-addons-test-utils": "^15.1.0",
