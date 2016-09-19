@@ -47,7 +47,7 @@ module.exports =
 
 	'use strict';
 	
-	module.exports = __webpack_require__(244);
+	module.exports = __webpack_require__(245);
 
 /***/ },
 /* 1 */
@@ -6566,15 +6566,15 @@ module.exports =
 /* 220 */,
 /* 221 */,
 /* 222 */,
-/* 223 */
+/* 223 */,
+/* 224 */,
+/* 225 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"hide":"_styles_hide","invisible":"_styles_invisible","hide-for-small-only":"_styles_hide-for-small-only","show-for-small-only":"_styles_show-for-small-only","hide-for-medium":"_styles_hide-for-medium","show-for-medium":"_styles_show-for-medium","hide-for-medium-only":"_styles_hide-for-medium-only","show-for-medium-only":"_styles_show-for-medium-only","hide-for-large":"_styles_hide-for-large","show-for-large":"_styles_show-for-large","hide-for-large-only":"_styles_hide-for-large-only","show-for-large-only":"_styles_show-for-large-only","hide-for-xlarge":"_styles_hide-for-xlarge","show-for-xlarge":"_styles_show-for-xlarge","hide-for-xlarge-only":"_styles_hide-for-xlarge-only","show-for-xlarge-only":"_styles_show-for-xlarge-only","hide-for-xxlarge":"_styles_hide-for-xxlarge","show-for-xxlarge":"_styles_show-for-xxlarge","hide-for-xxlarge-only":"_styles_hide-for-xxlarge-only","show-for-xxlarge-only":"_styles_show-for-xxlarge-only","show-for-sr":"_styles_show-for-sr","show-on-focus":"_styles_show-on-focus","show-for-landscape":"_styles_show-for-landscape","hide-for-portrait":"_styles_hide-for-portrait","hide-for-landscape":"_styles_hide-for-landscape","show-for-portrait":"_styles_show-for-portrait"};
 
 /***/ },
-/* 224 */,
-/* 225 */,
 /* 226 */,
 /* 227 */,
 /* 228 */,
@@ -6593,7 +6593,8 @@ module.exports =
 /* 241 */,
 /* 242 */,
 /* 243 */,
-/* 244 */
+/* 244 */,
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6619,7 +6620,7 @@ module.exports =
 	
 	var _createWrapperComponent2 = _interopRequireDefault(_createWrapperComponent);
 	
-	var _styles = __webpack_require__(223);
+	var _styles = __webpack_require__(225);
 	
 	var _styles2 = _interopRequireDefault(_styles);
 	

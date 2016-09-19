@@ -50,7 +50,7 @@ module.exports =
 	/**
 	 * Created by frank on 7/26/16.
 	 */
-	var TextAlignment = __webpack_require__(242);
+	var TextAlignment = __webpack_require__(243);
 	module.exports = TextAlignment;
 
 /***/ },
@@ -6705,15 +6705,15 @@ module.exports =
 /* 218 */,
 /* 219 */,
 /* 220 */,
-/* 221 */
+/* 221 */,
+/* 222 */,
+/* 223 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"text-left":"_styles_text-left","text-right":"_styles_text-right","text-center":"_styles_text-center","text-justify":"_styles_text-justify","medium-text-left":"_styles_medium-text-left","medium-text-right":"_styles_medium-text-right","medium-text-center":"_styles_medium-text-center","medium-text-justify":"_styles_medium-text-justify","large-text-left":"_styles_large-text-left","large-text-right":"_styles_large-text-right","large-text-center":"_styles_large-text-center","large-text-justify":"_styles_large-text-justify","xlarge-text-left":"_styles_xlarge-text-left","xlarge-text-right":"_styles_xlarge-text-right","xlarge-text-center":"_styles_xlarge-text-center","xlarge-text-justify":"_styles_xlarge-text-justify","xxlarge-text-left":"_styles_xxlarge-text-left","xxlarge-text-right":"_styles_xxlarge-text-right","xxlarge-text-center":"_styles_xxlarge-text-center","xxlarge-text-justify":"_styles_xxlarge-text-justify"};
 
 /***/ },
-/* 222 */,
-/* 223 */,
 /* 224 */,
 /* 225 */,
 /* 226 */,
@@ -6732,7 +6732,8 @@ module.exports =
 /* 239 */,
 /* 240 */,
 /* 241 */,
-/* 242 */
+/* 242 */,
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6750,7 +6751,7 @@ module.exports =
 	
 	var _screenSize = __webpack_require__(140);
 	
-	var _styles = __webpack_require__(221);
+	var _styles = __webpack_require__(223);
 	
 	var _styles2 = _interopRequireDefault(_styles);
 	

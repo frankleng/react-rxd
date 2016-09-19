@@ -15,9 +15,8 @@
     "compile": "babel --presets es2015,react,stage-0 -d lib/ src/ && cpy \"**/*.scss\" ../lib --parents --cwd=src"
   },
   "main": "dist/",
-  "files": ["dist"],
   "license": "MIT",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "dependencies": {
     "autoprefixer": "^6.3.6",
     "babel-cli": "^6.14.0",

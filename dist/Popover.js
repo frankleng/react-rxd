@@ -61,7 +61,7 @@ module.exports =
 	 */
 	var React = __webpack_require__(10);
 	
-	var _require = __webpack_require__(218);
+	var _require = __webpack_require__(220);
 	
 	var getPopoverClassnameFromProps = _require.getPopoverClassnameFromProps;
 	
@@ -82,7 +82,7 @@ module.exports =
 	};
 	
 	Popover.propTypes = {
-	  position: React.PropTypes.oneOf(['topleft', 'top', 'topright', 'lefttop', 'left', 'leftbottom', 'righttop', 'right', 'rightbottom', 'bottomleft', 'bottomright']),
+	  position: React.PropTypes.oneOf(['topleft', 'top', 'topright', 'lefttop', 'left', 'leftbottom', 'righttop', 'right', 'rightbottom', 'bottomleft', 'bottomright']).isRequired,
 	  size: React.PropTypes.oneOf(['medium', 'large', 'xlarge']),
 	  children: React.PropTypes.node,
 	  className: React.PropTypes.string
@@ -3921,7 +3921,7 @@ module.exports =
 
 /***/ },
 
-/***/ 218:
+/***/ 220:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3933,10 +3933,10 @@ module.exports =
 	/**
 	 * Created by frank on 9/13/16.
 	 */
-	var styles = __webpack_require__(234);
+	var styles = __webpack_require__(235);
 	
 	function getPopoverClassnameFromProps(props) {
-	  var className = [];
+	  var className = [styles.popover];
 	  if (props.position) className.push(styles[props.position]);
 	  if (props.size) className.push(styles[props.size]);
 	  if (props.className) className.push(props.className);
@@ -3945,7 +3945,7 @@ module.exports =
 
 /***/ },
 
-/***/ 234:
+/***/ 235:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

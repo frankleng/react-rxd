@@ -5,7 +5,7 @@ const assign = require('lodash/assign');
 const React = require('react');
 const PropTypes = require('react').PropTypes;
 const Grid = require('react-foundation-components/lib/grid-flex');
-const styles = require('./Row.scss');
+const { getRowClassnameFromProps } = require('./helper');
 
 Grid.Column.propTypes = assign({
 
@@ -56,15 +56,18 @@ Grid.Row.propTypes = assign({
 }, Grid.Column.propTypes);
 
 const Row = (props) => {
-  const { fullWidth, className, ...rest } = props;
-  const fullWidthClassName = fullWidth ? styles.fullWidth : '';
-  const rowClassName = className ? `${className} ${fullWidthClassName}` : fullWidthClassName;
+  const { fullWidth, className, noGutter, ...rest } = props;
   return (
-    <Grid.Row className={rowClassName} {...rest} />
+    <Grid.Row
+      className={getRowClassnameFromProps({ fullWidth, className, noGutter })}
+      {...rest}
+    />
   );
 };
+
 Row.propTypes = {
   fullWidth: PropTypes.bool,
+  noGutter: PropTypes.bool,
   className: PropTypes.string
 };
 

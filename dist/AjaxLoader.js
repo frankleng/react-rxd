@@ -53,15 +53,15 @@ module.exports =
 	});
 	exports.FadingCircle = exports.Spinner = exports.Bars = undefined;
 	
-	var _Bars2 = __webpack_require__(209);
+	var _Bars2 = __webpack_require__(210);
 	
 	var _Bars3 = _interopRequireDefault(_Bars2);
 	
-	var _Spinner2 = __webpack_require__(211);
+	var _Spinner2 = __webpack_require__(212);
 	
 	var _Spinner3 = _interopRequireDefault(_Spinner2);
 	
-	var _FadingCircle2 = __webpack_require__(210);
+	var _FadingCircle2 = __webpack_require__(211);
 	
 	var _FadingCircle3 = _interopRequireDefault(_FadingCircle2);
 	
@@ -4387,10 +4387,10 @@ module.exports =
 
 /***/ },
 
-/***/ 208:
+/***/ 209:
 /***/ function(module, exports, __webpack_require__) {
 
-	var createRange = __webpack_require__(238);
+	var createRange = __webpack_require__(239);
 	
 	/**
 	 * Creates an array of numbers (positive and/or negative) progressing from
@@ -4440,7 +4440,7 @@ module.exports =
 
 /***/ },
 
-/***/ 209:
+/***/ 210:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4452,8 +4452,8 @@ module.exports =
 	 * Created by frank on 9/10/16.
 	 */
 	var React = __webpack_require__(10);
-	var styles = __webpack_require__(224);
-	var range = __webpack_require__(208);
+	var styles = __webpack_require__(226);
+	var range = __webpack_require__(209);
 	
 	// 10x
 	var LoadingBars = range(0, 10).map(function () {
@@ -4472,7 +4472,7 @@ module.exports =
 
 /***/ },
 
-/***/ 210:
+/***/ 211:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4489,8 +4489,8 @@ module.exports =
 	 * Created by frank on 9/10/16.
 	 */
 	var React = __webpack_require__(10);
-	var styles = __webpack_require__(225);
-	var range = __webpack_require__(208);
+	var styles = __webpack_require__(227);
+	var range = __webpack_require__(209);
 	
 	// 12x
 	var Circles = range(0, 12).map(function () {
@@ -4517,7 +4517,7 @@ module.exports =
 
 /***/ },
 
-/***/ 211:
+/***/ 212:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4529,7 +4529,7 @@ module.exports =
 	 * Created by frank on 9/10/16.
 	 */
 	var React = __webpack_require__(10);
-	var styles = __webpack_require__(226);
+	var styles = __webpack_require__(228);
 	
 	var Spinner = function Spinner() {
 	  return React.createElement('div', { className: styles.spinner });
@@ -4539,7 +4539,7 @@ module.exports =
 
 /***/ },
 
-/***/ 224:
+/***/ 226:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
@@ -4547,7 +4547,7 @@ module.exports =
 
 /***/ },
 
-/***/ 225:
+/***/ 227:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
@@ -4555,7 +4555,7 @@ module.exports =
 
 /***/ },
 
-/***/ 226:
+/***/ 228:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
@@ -4563,7 +4563,7 @@ module.exports =
 
 /***/ },
 
-/***/ 235:
+/***/ 236:
 /***/ function(module, exports) {
 
 	/* Built-in method references for those with the same name as other `lodash` methods. */
@@ -4598,10 +4598,10 @@ module.exports =
 
 /***/ },
 
-/***/ 238:
+/***/ 239:
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseRange = __webpack_require__(235),
+	var baseRange = __webpack_require__(236),
 	    isIterateeCall = __webpack_require__(185),
 	    toNumber = __webpack_require__(77);
 	

@@ -43,6 +43,17 @@
   animation-name: KeyframesAnimations_bounceIn;
   animation-duration: 1s; }
 
+@keyframes KeyframesAnimations_fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0); }
+  to {
+    opacity: 1;
+    transform: none; } }
+
+.KeyframesAnimations_fadeInDown {
+  animation-name: KeyframesAnimations_fadeInDown; }
+
 @keyframes KeyframesAnimations_fadeInUp {
   from {
     opacity: 0;
@@ -54,6 +65,16 @@
 .KeyframesAnimations_fadeInUp {
   animation-name: KeyframesAnimations_fadeInUp;
   animation-duration: 500ms; }
+
+@keyframes KeyframesAnimations_fadeOutUp {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0); } }
+
+.KeyframesAnimations_fadeOutUp {
+  animation-name: KeyframesAnimations_fadeOutUp; }
 
 @keyframes KeyframesAnimations_slideInUp {
   from {

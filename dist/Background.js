@@ -56,7 +56,7 @@ module.exports =
 	 */
 	var React = __webpack_require__(10);
 	
-	var _require = __webpack_require__(214);
+	var _require = __webpack_require__(215);
 	
 	var getBackgroundClassnameFromProps = _require.getBackgroundClassnameFromProps;
 	var getBackgroundImageStyle = _require.getBackgroundImageStyle;
@@ -3916,7 +3916,7 @@ module.exports =
 
 /***/ },
 
-/***/ 214:
+/***/ 215:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3929,7 +3929,7 @@ module.exports =
 	/**
 	 * Created by frank on 6/22/16.
 	 */
-	var styles = __webpack_require__(229);
+	var styles = __webpack_require__(230);
 	exports.styles = styles;
 	
 	/**
@@ -3958,7 +3958,7 @@ module.exports =
 
 /***/ },
 
-/***/ 229:
+/***/ 230:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

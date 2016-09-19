@@ -58,7 +58,7 @@ module.exports =
 	 */
 	var React = __webpack_require__(10);
 	
-	var _require = __webpack_require__(215);
+	var _require = __webpack_require__(216);
 	
 	var getButtonClassnameFromProps = _require.getButtonClassnameFromProps;
 	
@@ -6606,7 +6606,8 @@ module.exports =
 /* 212 */,
 /* 213 */,
 /* 214 */,
-/* 215 */
+/* 215 */,
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6621,7 +6622,7 @@ module.exports =
 	/**
 	 * Created by frank on 7/28/16.
 	 */
-	var styles = __webpack_require__(230);
+	var styles = __webpack_require__(231);
 	exports.styles = styles;
 	
 	
@@ -6642,7 +6643,6 @@ module.exports =
 	}
 
 /***/ },
-/* 216 */,
 /* 217 */,
 /* 218 */,
 /* 219 */,
@@ -6656,7 +6656,8 @@ module.exports =
 /* 227 */,
 /* 228 */,
 /* 229 */,
-/* 230 */
+/* 230 */,
+/* 231 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

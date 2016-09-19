@@ -51,9 +51,24 @@ module.exports =
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.Keyframes = undefined;
+	exports.fadeOutUp = exports.fadeInDown = exports.Keyframes = undefined;
 	
-	var _Keyframes2 = __webpack_require__(212);
+	var _KeyframesAnimations = __webpack_require__(207);
+	
+	Object.defineProperty(exports, 'fadeInDown', {
+	  enumerable: true,
+	  get: function get() {
+	    return _KeyframesAnimations.fadeInDown;
+	  }
+	});
+	Object.defineProperty(exports, 'fadeOutUp', {
+	  enumerable: true,
+	  get: function get() {
+	    return _KeyframesAnimations.fadeOutUp;
+	  }
+	});
+	
+	var _Keyframes2 = __webpack_require__(213);
 	
 	var _Keyframes3 = _interopRequireDefault(_Keyframes2);
 	
@@ -3949,7 +3964,15 @@ module.exports =
 
 /***/ },
 
-/***/ 212:
+/***/ 207:
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"animated":"KeyframesAnimations_animated","infinite":"KeyframesAnimations_infinite","shake":"KeyframesAnimations_shake KeyframesAnimations_animated","bounceIn":"KeyframesAnimations_bounceIn KeyframesAnimations_animated","fadeInDown":"KeyframesAnimations_fadeInDown","fadeInUp":"KeyframesAnimations_fadeInUp KeyframesAnimations_animated","fadeOutUp":"KeyframesAnimations_fadeOutUp","slideInUp":"KeyframesAnimations_slideInUp KeyframesAnimations_animated","bounceInUp":"KeyframesAnimations_bounceInUp"};
+
+/***/ },
+
+/***/ 213:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3964,7 +3987,7 @@ module.exports =
 	 * Created by frank on 7/29/16.
 	 */
 	var React = __webpack_require__(10);
-	var styles = __webpack_require__(227);
+	var styles = __webpack_require__(207);
 	var classnames = __webpack_require__(53);
 	
 	var AnimatableKeyframes = function AnimatableKeyframes(props) {
@@ -3987,18 +4010,10 @@ module.exports =
 	  shouldAnimate: React.PropTypes.bool.isRequired,
 	  children: React.PropTypes.node.isRequired,
 	  className: React.PropTypes.string,
-	  keyframeClass: React.PropTypes.oneOf(['shake', 'bounceIn', 'fadeInUp', 'slideInUp', 'bounceInUp'])
+	  keyframeClass: React.PropTypes.oneOf(['shake', 'bounceIn', 'fadeInUp', 'fadeInDown', 'fadeOutUp', 'slideInUp', 'bounceInUp']).isRequired
 	};
 	
 	exports.default = AnimatableKeyframes;
-
-/***/ },
-
-/***/ 227:
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-	module.exports = {"animated":"KeyframesAnimations_animated","infinite":"KeyframesAnimations_infinite","shake":"KeyframesAnimations_shake KeyframesAnimations_animated","bounceIn":"KeyframesAnimations_bounceIn KeyframesAnimations_animated","fadeInUp":"KeyframesAnimations_fadeInUp KeyframesAnimations_animated","slideInUp":"KeyframesAnimations_slideInUp KeyframesAnimations_animated","bounceInUp":"KeyframesAnimations_bounceInUp"};
 
 /***/ }
 

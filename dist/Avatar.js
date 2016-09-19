@@ -56,7 +56,7 @@ module.exports =
 	 */
 	var React = __webpack_require__(10);
 	
-	var _require = __webpack_require__(213);
+	var _require = __webpack_require__(214);
 	
 	var getBaseClassName = _require.getBaseClassName;
 	var getAvatarClassnameFromProps = _require.getAvatarClassnameFromProps;
@@ -3912,7 +3912,7 @@ module.exports =
 
 /***/ },
 
-/***/ 213:
+/***/ 214:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3922,7 +3922,7 @@ module.exports =
 	});
 	exports.getAvatarClassnameFromProps = getAvatarClassnameFromProps;
 	exports.getBaseClassName = getBaseClassName;
-	var styles = __webpack_require__(228);
+	var styles = __webpack_require__(229);
 	exports.styles = styles;
 	
 	/**
@@ -3949,7 +3949,7 @@ module.exports =
 
 /***/ },
 
-/***/ 228:
+/***/ 229:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

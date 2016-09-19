@@ -52,7 +52,7 @@ module.exports =
 	 * Created by frank on 7/19/16.
 	 */
 	var React = __webpack_require__(10);
-	var helper = __webpack_require__(216);
+	var helper = __webpack_require__(217);
 	
 	var Card = function Card(props) {
 	  return React.createElement(
@@ -3959,7 +3959,7 @@ module.exports =
 
 /***/ },
 
-/***/ 216:
+/***/ 217:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3979,7 +3979,7 @@ module.exports =
 	 * @returns {string}
 	 */
 	var classnames = __webpack_require__(53);
-	var styles = __webpack_require__(231);
+	var styles = __webpack_require__(232);
 	
 	function getCardClassnameFromProps(props) {
 	  var _classnames;
@@ -3994,7 +3994,7 @@ module.exports =
 
 /***/ },
 
-/***/ 231:
+/***/ 232:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

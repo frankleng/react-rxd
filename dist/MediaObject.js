@@ -50,7 +50,7 @@ module.exports =
 	/**
 	 * Created by frank on 9/11/16.
 	 */
-	module.exports = __webpack_require__(241);
+	module.exports = __webpack_require__(242);
 
 /***/ },
 /* 1 */
@@ -6839,15 +6839,15 @@ module.exports =
 /* 217 */,
 /* 218 */,
 /* 219 */,
-/* 220 */
+/* 220 */,
+/* 221 */,
+/* 222 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"media-object":"_styles_media-object","stack-for-small":"_styles_stack-for-small","media-object-section":"_styles_media-object-section","main-section":"_styles_main-section"};
 
 /***/ },
-/* 221 */,
-/* 222 */,
 /* 223 */,
 /* 224 */,
 /* 225 */,
@@ -6866,7 +6866,8 @@ module.exports =
 /* 238 */,
 /* 239 */,
 /* 240 */,
-/* 241 */
+/* 241 */,
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6908,7 +6909,7 @@ module.exports =
 	
 	var _flexMock = __webpack_require__(206);
 	
-	var _styles = __webpack_require__(220);
+	var _styles = __webpack_require__(222);
 	
 	var _styles2 = _interopRequireDefault(_styles);
 	

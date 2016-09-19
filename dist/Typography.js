@@ -51,7 +51,7 @@ module.exports =
 	 * Created by frank on 7/29/16.
 	 */
 	
-	var _require = __webpack_require__(243);
+	var _require = __webpack_require__(244);
 	
 	var Subheader = _require.Subheader;
 	var Lead = _require.Lead;
@@ -4855,15 +4855,15 @@ module.exports =
 /* 219 */,
 /* 220 */,
 /* 221 */,
-/* 222 */
+/* 222 */,
+/* 223 */,
+/* 224 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"subheader":"_styles_subheader","lead":"_styles_lead","stat":"_styles_stat","no-bullet":"_styles_no-bullet"};
 
 /***/ },
-/* 223 */,
-/* 224 */,
 /* 225 */,
 /* 226 */,
 /* 227 */,
@@ -4882,7 +4882,8 @@ module.exports =
 /* 240 */,
 /* 241 */,
 /* 242 */,
-/* 243 */
+/* 243 */,
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4896,7 +4897,7 @@ module.exports =
 	
 	var _createWrapperComponent2 = _interopRequireDefault(_createWrapperComponent);
 	
-	var _styles = __webpack_require__(222);
+	var _styles = __webpack_require__(224);
 	
 	var _styles2 = _interopRequireDefault(_styles);
 	
