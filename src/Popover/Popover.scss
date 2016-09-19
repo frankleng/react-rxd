@@ -3,17 +3,15 @@
 .popover {
   filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.27));
   height: auto;
-  width: 200px;
+  width: auto;
   transform: translate(-50%, 20px);
   transition: all 0.2s cubic-bezier(0.175, 0.885, 0.22, 1.275) 0.01s;
   background-color: $white;
   border-radius: $base-border-radius;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.04);
   left: 50%;
-  opacity: 0;
-  padding: 20px;
+  padding: 10px;
   position: absolute;
-  visibility: hidden;
   &:after {
     position: absolute;
     top: -6px;

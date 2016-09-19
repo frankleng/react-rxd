@@ -20,7 +20,7 @@ Popover.propTypes = {
     'lefttop', 'left', 'leftbottom',
     'righttop', 'right', 'rightbottom',
     'bottomleft', 'bottomright'
-  ]),
+  ]).isRequired,
   size: React.PropTypes.oneOf(['medium', 'large', 'xlarge']),
   children: React.PropTypes.node,
   className: React.PropTypes.string

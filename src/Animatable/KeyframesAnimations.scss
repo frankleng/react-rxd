@@ -69,6 +69,22 @@
   animation-duration: 1s;
 }
 
+@keyframes :local(fadeInDown) {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fadeInDown {
+  animation-name: fadeInDown;
+}
+
 @keyframes :local(fadeInUp) {
   from {
     opacity: 0;
@@ -85,6 +101,21 @@
   composes: animated;
   animation-name: fadeInUp;
   animation-duration: 500ms;
+}
+
+@keyframes :local(fadeOutUp) {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+.fadeOutUp {
+  animation-name: fadeOutUp;
 }
 
 @keyframes :local(slideInUp) {

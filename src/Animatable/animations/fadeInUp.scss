@@ -1,0 +1,17 @@
+@keyframes :local(fadeInUp) {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fadeInUp {
+  composes: animated from "./_common.scss";
+  animation-name: fadeInUp;
+  animation-duration: 500ms;
+}

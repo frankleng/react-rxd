@@ -22,7 +22,15 @@ AnimatableKeyframes.propTypes = {
   shouldAnimate: React.PropTypes.bool.isRequired,
   children: React.PropTypes.node.isRequired,
   className: React.PropTypes.string,
-  keyframeClass: React.PropTypes.oneOf(['shake', 'bounceIn', 'fadeInUp', 'slideInUp', 'bounceInUp'])
+  keyframeClass: React.PropTypes.oneOf([
+    'shake',
+    'bounceIn',
+    'fadeInUp',
+    'fadeInDown',
+    'fadeOutUp',
+    'slideInUp',
+    'bounceInUp'
+  ]).isRequired
 };
 
 export default AnimatableKeyframes;

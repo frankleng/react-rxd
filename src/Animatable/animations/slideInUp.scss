@@ -1,0 +1,15 @@
+@keyframes :local(slideInUp) {
+  from {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInUp {
+  composes: animated from "./_common.scss";
+  animation-name: slideInUp;
+}
