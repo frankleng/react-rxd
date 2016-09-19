@@ -13,11 +13,11 @@
     "test": "karma start --single-run",
     "watch-test": "karma start",
     "compile": "babel --presets es2015,react,stage-0 -d lib/ src/ && cpy \"**/*.scss\" ../lib --parents --cwd=src",
-    "publish": "npm run build && npm publish"
+    "pub": "npm run build && npm publish"
   },
   "main": "dist/",
   "license": "MIT",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "dependencies": {
     "autoprefixer": "^6.3.6",
     "babel-cli": "^6.14.0",
