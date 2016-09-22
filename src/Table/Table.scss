@@ -1,0 +1,23 @@
+table.table {
+  border-radius: 4px;
+  box-shadow: 1px 1px 6px rgba(139, 139, 139, 0.5);
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  th {
+    color: #979797;
+    vertical-align: middle;
+  }
+  td, th {
+    border-bottom: 1px solid #dfdfdf;
+    padding: 15px 10px;
+    text-align: left;
+
+    &:first-child {
+      padding-left: 25px;
+    }
+    &:last-child {
+      padding-right: 25px;
+    }
+  }
+}

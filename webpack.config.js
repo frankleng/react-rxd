@@ -18,6 +18,7 @@ module.exports = {
     Input: './src/Input/index.js',
     MediaObject: './src/MediaObject/index.js',
     Popover: './src/Popover/index.js',
+    Table: './src/Table/index.js',
     TextAlignment: './src/TextAlignment/index.js',
     Typography: './src/Typography/index.js',
     Visibility: './src/Visibility/index.js'
