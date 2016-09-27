@@ -27,7 +27,7 @@ class Checkbox extends React.Component {
     return (
       <span className={styles.checkboxContainer}>
         <input checked={checked} onChange={onChange} id={this.state.id} type="checkbox" {...getRestProps(this.props, propTypes)} />
-        <label htmlFor={this.state.id}>{children ? <span>{children}</span> : null}</label>
+        <label htmlFor={this.state.id}>{children && <span>{children}</span>}</label>
       </span>
     );
   }
