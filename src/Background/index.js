@@ -10,7 +10,9 @@ const Background = (props) =>
     style={{
       backgroundImage: getBackgroundImageStyle(props)
     }}
-  />;
+  >
+    {props.children}
+  </div>;
 
 Background.propTypes = {
   className: React.PropTypes.string,
@@ -21,7 +23,8 @@ Background.propTypes = {
   cover: React.PropTypes.bool,
   darken: React.PropTypes.number,  // percentage of black opacity
   centered: React.PropTypes.bool,
-  fixed: React.PropTypes.bool
+  fixed: React.PropTypes.bool,
+  children: React.PropTypes.node
 };
 
 export default Background;
