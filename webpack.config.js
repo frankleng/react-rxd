@@ -19,6 +19,7 @@ module.exports = {
     Grid: './src/Grid/index.js',
     Input: './src/Input/index.js',
     MediaObject: './src/MediaObject/index.js',
+    Modal: './src/Modal/index.js',
     Popover: './src/Popover/index.js',
     Table: './src/Table/index.js',
     TextAlignment: './src/TextAlignment/index.js',
