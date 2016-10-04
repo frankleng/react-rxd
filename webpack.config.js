@@ -12,12 +12,16 @@ module.exports = {
     Animatable: './src/Animatable/index.js',
     Avatar: './src/Avatar/index.js',
     Background: './src/Background/index.js',
+    Badge: './src/Badge/index.js',
     Button: './src/Button/index.js',
     Card: './src/Card/index.js',
+    Checkbox: './src/Checkbox/index.js',
     Grid: './src/Grid/index.js',
     Input: './src/Input/index.js',
     MediaObject: './src/MediaObject/index.js',
+    Modal: './src/Modal/index.js',
     Popover: './src/Popover/index.js',
+    Table: './src/Table/index.js',
     TextAlignment: './src/TextAlignment/index.js',
     Typography: './src/Typography/index.js',
     Visibility: './src/Visibility/index.js'
@@ -73,14 +77,6 @@ module.exports = {
           'style',
           'css?module&localIdentName=[name]_[local]!sass'
         )
-      },
-      {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
-      },
-      {
-        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url-loader?limit=10000'
       }
     ]
   }

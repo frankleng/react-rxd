@@ -29,7 +29,8 @@ AnimatableKeyframes.propTypes = {
     'fadeInDown',
     'fadeOutUp',
     'slideInUp',
-    'bounceInUp'
+    'bounceInUp',
+    'flipInY'
   ]).isRequired
 };
 
