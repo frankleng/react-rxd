@@ -5,13 +5,6 @@ const styles = require('./Modal.scss');
 const closeIcon = require('./close-icon.svg');
 
 class Modal extends React.Component {
-  static propTypes = {
-    onCancel: React.PropTypes.func.isRequired,
-    children: React.PropTypes.node.isRequired,
-    small: React.PropTypes.bool,
-    large: React.PropTypes.bool
-  };
-
   state = {
     show: false
   };
@@ -64,7 +57,14 @@ class Modal extends React.Component {
   }
 }
 
-const Header = ({ children, onCancel }) => (
+Modal.propTypes = {
+  onCancel: React.PropTypes.func.isRequired,
+  children: React.PropTypes.node.isRequired,
+  small: React.PropTypes.bool,
+  large: React.PropTypes.bool
+};
+
+export const Header = ({ children, onCancel }) => (
   <div className={styles.modalHeader}>
     <h3>{children}</h3>
     <button onClick={onCancel}><img src={closeIcon} role="presentation" /></button>
@@ -76,9 +76,7 @@ Header.propTypes = {
   onCancel: React.PropTypes.func.isRequired
 };
 
-Modal.Header = Header;
-
-const Body = ({ children }) => (
+export const Body = ({ children }) => (
   <div className={styles.modalBody}>
     {children}
   </div>
@@ -88,9 +86,7 @@ Body.propTypes = {
   children: React.PropTypes.node.isRequired
 };
 
-Modal.Body = Body;
-
-const Footer = ({ children }) => (
+export const Footer = ({ children }) => (
   <div className={styles.modalFooter}>
     {children}
   </div>
@@ -99,7 +95,5 @@ const Footer = ({ children }) => (
 Footer.propTypes = {
   children: React.PropTypes.node.isRequired
 };
-
-Modal.Footer = Footer;
 
 export default Modal;
