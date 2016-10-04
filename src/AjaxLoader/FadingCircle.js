@@ -13,7 +13,7 @@ const Circles = range(0, 12).map(
 const Circle = (props) => {
   const { className, ...rest } = props;
   return (
-    <div className={`${styles.fadingCircle} ${className}`} {...rest}>
+    <div className={`${styles.fadingCircle} ${className || ''}`} {...rest}>
       {Circles}
     </div>
   );
