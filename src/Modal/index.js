@@ -44,7 +44,7 @@ class Modal extends React.Component {
   handleKeyDown = e => {
     if (e.keyCode === 27)
       this.props.onCancel();
-  }
+  };
 
   render() {
     const { onCancel, children, small, large } = this.props;
