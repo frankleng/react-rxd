@@ -11,7 +11,8 @@ const propTypes = {
   className: React.PropTypes.string,
   disabled: React.PropTypes.bool,
   isValid: React.PropTypes.bool,
-  isInValid: React.PropTypes.bool
+  isInValid: React.PropTypes.bool,
+  refInput: React.PropTypes.func
 };
 
 const Input = (props) => {
@@ -21,6 +22,7 @@ const Input = (props) => {
     className={classNamesFromProps}
     placeholder={props.placeholder}
     type={type}
+    ref={props.refInput}
     {...getRestProps(props, propTypes)}
   />);
 };
@@ -31,8 +33,9 @@ Input.propTypes = propTypes;
 // See the note under https://facebook.github.io/react/docs/reusable-components.html#stateless-functions
 export class StatefulInput extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
-    return <Input {...this.props} />;
+    return (<Input {...this.props} />);
   }
 }
+StatefulInput.propTypes = propTypes;
 
 export default Input;
