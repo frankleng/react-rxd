@@ -1,0 +1,55 @@
+.status {
+  // TODO: use variable if it exists in react-rxd
+  color: #6d818e;
+
+  &.success {
+    color: #74B592;
+
+    &:before {
+      background-color: #89D5AC;
+      border: 1px solid #74B592;
+    }
+  }
+
+  &.warning {
+    color: #D8CD3C;
+
+    &:before {
+      background-color: #F1E544;
+      border: 1px solid #D8CD3C;
+    }
+  }
+
+  &.info {
+    color: #3FAFE8;
+
+    &:before {
+      background: #4ABBF3;
+      border: 1px solid #3FAFE8;
+    }
+  }
+
+  &.danger {
+    color: #C03434;
+
+    &:before {
+      background: #E33E3E;
+      border: 1px solid #C03434;
+    }
+  }
+
+  &:before {
+    content: '';
+    display: inline-block;
+
+    width: 10px;
+    height: 10px;
+
+    background-color: #F2F4F5;
+
+    border-radius: 50%;
+    border: 1px solid #B5BFC6;
+
+    margin-right: 10px;
+  }
+}
