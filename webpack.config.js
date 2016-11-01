@@ -21,6 +21,7 @@ module.exports = {
     MediaObject: './src/MediaObject/index.js',
     Modal: './src/Modal/index.js',
     Popover: './src/Popover/index.js',
+    Status: './src/Status/index.js',
     Switch: './src/Switch/index.js',
     Table: './src/Table/index.js',
     TextAlignment: './src/TextAlignment/index.js',
