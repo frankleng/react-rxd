@@ -1,40 +1,41 @@
+@import "../common";
+
 .status {
-  // TODO: use variable if it exists in react-rxd
   color: #6d818e;
 
   &.success {
-    color: #74B592;
+    color: $success-color-dark-1;
 
     &:before {
-      background-color: #89D5AC;
-      border: 1px solid #74B592;
+      background-color: $success-color;
+      border: 1px solid $success-color-dark-1;
     }
   }
 
   &.warning {
-    color: #D8CD3C;
+    color: $warning-color-dark-1;
 
     &:before {
-      background-color: #F1E544;
-      border: 1px solid #D8CD3C;
+      background-color: $warning-color;
+      border: 1px solid $warning-color-dark-1;
     }
   }
 
   &.info {
-    color: #3FAFE8;
+    color: $primary-color-dark-1;
 
     &:before {
-      background: #4ABBF3;
-      border: 1px solid #3FAFE8;
+      background: $primary-color;
+      border: 1px solid $primary-color-dark-1;
     }
   }
 
   &.danger {
-    color: #C03434;
+    color: $danger-color-dark-1;
 
     &:before {
-      background: #E33E3E;
-      border: 1px solid #C03434;
+      background: $danger-color;
+      border: 1px solid $danger-color-dark-1;
     }
   }
 
