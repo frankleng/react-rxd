@@ -1,0 +1,56 @@
+@import "../common";
+
+.status {
+  color: #6d818e;
+
+  &.success {
+    color: $success-color-dark-1;
+
+    &:before {
+      background-color: $success-color;
+      border: 1px solid $success-color-dark-1;
+    }
+  }
+
+  &.warning {
+    color: $warning-color-dark-1;
+
+    &:before {
+      background-color: $warning-color;
+      border: 1px solid $warning-color-dark-1;
+    }
+  }
+
+  &.info {
+    color: $primary-color-dark-1;
+
+    &:before {
+      background: $primary-color;
+      border: 1px solid $primary-color-dark-1;
+    }
+  }
+
+  &.danger {
+    color: $danger-color-dark-1;
+
+    &:before {
+      background: $danger-color;
+      border: 1px solid $danger-color-dark-1;
+    }
+  }
+
+  &:before {
+    content: '';
+    display: inline-block;
+
+    width: 10px;
+    height: 10px;
+
+    background-color: #F2F4F5;
+
+    border-radius: 50%;
+    border: 1px solid #B5BFC6;
+
+    margin-right: 10px;
+  }
+}
