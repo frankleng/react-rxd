@@ -3,10 +3,21 @@ machine:
     CONTINUOUS_INTEGRATION: true
     REPORT_OUPUT_DIR: $CIRCLE_TEST_REPORTS
   node:
-    version: 6.2.2
+    version: 6
+
+dependencies:
+  pre:
+    - echo -e "$NPM_USER\n$NPM_PASS\n$NPM_EMAIL" | npm login
+
 test:
   override:
     - mkdir -p $CIRCLE_TEST_REPORTS/eslint
     - npm run lint-ci
     - mkdir -p $CIRCLE_TEST_REPORTS/karma
     - npm test
+
+deployment:
+  production:
+    branch: master
+    commands:
+       - npm run pub
