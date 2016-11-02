@@ -2,8 +2,8 @@ import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import styles from './Panel.scss';
 
-const Panel = ({ children, className }) => (
-  <div className={classnames(styles.panel, className)}>
+const Panel = ({ children, className, ...rest }) => (
+  <div className={classnames(styles.panel, className)} {...rest} >
     {children}
   </div>
 );
