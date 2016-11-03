@@ -11,7 +11,7 @@ const propTypes = {
   className: React.PropTypes.string,
   disabled: React.PropTypes.bool,
   isValid: React.PropTypes.bool,
-  isInValid: React.PropTypes.bool,
+  isInvalid: React.PropTypes.bool,
   refInput: React.PropTypes.func
 };
 
