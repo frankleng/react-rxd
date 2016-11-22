@@ -9,6 +9,7 @@ const propTypes = {
   className: React.PropTypes.string,
   disabled: React.PropTypes.bool,
   primary: React.PropTypes.bool,
+  fullWidth: React.PropTypes.bool,
   success: React.PropTypes.bool,
   warning: React.PropTypes.bool,
   info: React.PropTypes.bool,
