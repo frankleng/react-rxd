@@ -24,7 +24,6 @@
     "lodash": "^4.13.1",
     "node-bourbon": "^4.2.8",
     "react": "^15.3.0",
-    "react-click-outside": "^2.1.0",
     "react-foundation-components": "^0.12.0"
   },
   "devDependencies": {

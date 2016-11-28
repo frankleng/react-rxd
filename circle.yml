@@ -20,4 +20,8 @@ deployment:
   production:
     branch: master
     commands:
-       - npm publish
+      - npm publish
+  stage:
+    branch: develop
+    commands:
+      - npm publish --tag dev
