@@ -110,8 +110,7 @@ $dropdown-item-height: 50px !default;
 
 
 //Card
-$card-border-color: $base-border-color;
-$card-border: 1px solid $card-border-color;
+$card-border: 1px transparent;
 $card-background: white;
 $card-header-background: $card-background;
 $card-margin: 1em;
