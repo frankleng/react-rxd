@@ -13,11 +13,11 @@
     "test": "karma start --single-run",
     "watch-test": "karma start",
     "compile": "babel --presets es2015,react,stage-0 -d lib/ src/ && cpy \"**/*.scss\" ../lib --parents --cwd=src",
-    "pub": "npm run build && npm publish"
+    "prepublish": "npm run build"
   },
   "main": "dist/",
   "license": "MIT",
-  "version": "1.1.5",
+  "version": "1.1.8",
   "dependencies": {
     "bourbon": "^4.2.7",
     "classnames": "^2.2.5",
