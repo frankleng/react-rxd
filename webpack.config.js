@@ -42,6 +42,7 @@ module.exports = {
       'src',
       'node_modules'
     ],
+    alias: { 'react/lib/ReactUpdates': 'react-dom/lib/ReactUpdates' },
     extensions: ['', '.json', '.js']
   },
 
