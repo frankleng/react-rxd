@@ -2,14 +2,14 @@
 
 .card {
   background-color: $card-background;
-  border: $card-border;
   border-radius: $base-border-radius;
-  box-shadow: 0 1px 4px rgba(145, 160, 170, 0.5);
+  box-shadow:  0 6px 15px rgba(145, 160, 170, 0.3);
   flex-basis: 15em;
   flex-grow: 1;
   margin: 0 $card-margin $base-spacing $card-margin;
   position: relative;
   transition: all 0.2s ease-in-out;
+  overflow: hidden;
 
   &:hover {
     box-shadow: 0 1px 4px rgba($grey, 0.5);
@@ -57,7 +57,6 @@
 
 .card-header {
   background-color: $card-header-background;
-  border-bottom: $card-border;
   border-radius: $base-border-radius $base-border-radius 0 0;
   font-weight: bold;
   line-height: 1.5em;
