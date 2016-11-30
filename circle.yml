@@ -15,7 +15,9 @@ test:
     - npm run lint-ci
     - mkdir -p $CIRCLE_TEST_REPORTS/karma
     - npm test
-
+dependencies:
+ post:
+  - npm install -g package-tag
 deployment:
   production:
     branch: master
@@ -24,4 +26,5 @@ deployment:
   stage:
     branch: develop
     commands:
+      - package-tag --tag develop
       - npm publish --tag dev
