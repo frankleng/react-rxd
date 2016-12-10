@@ -76,14 +76,15 @@ Header.propTypes = {
   onCancel: React.PropTypes.func.isRequired
 };
 
-export const Body = ({ children }) => (
-  <div className={styles.modalBody}>
+export const Body = ({ children, className }) => (
+  <div className={`${styles.modalBody}  ${className || ''}`}>
     {children}
   </div>
 );
 
 Body.propTypes = {
-  children: React.PropTypes.node.isRequired
+  children: React.PropTypes.node.isRequired,
+  className: React.PropTypes.string
 };
 
 export const Footer = ({ children }) => (
