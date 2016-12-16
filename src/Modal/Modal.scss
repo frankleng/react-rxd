@@ -69,11 +69,18 @@
   transition: transform 0.2s ease;
 
   &.small {
-    width: 20em;
+    width: 100%;
+    max-width: 20em;
+  }
+
+  &.medium {
+    width: 100%;
+    max-width: 40em;
   }
 
   &.large {
-    width: 60em;
+    width: 100%;
+    max-width: 60em;
   }
 }
 

@@ -40,7 +40,7 @@ class Modal extends React.Component {
   };
 
   render() {
-    const { onCancel, children, small, large } = this.props;
+    const { onCancel, children, small, medium, large } = this.props;
 
     const stopPropagation = (e) => e.stopPropagation();
 
@@ -49,7 +49,7 @@ class Modal extends React.Component {
         className={classnames(styles.modalOverlay, { [styles.show]: this.state.show, [styles.hiding]: this.state.hiding })}
         onClick={onCancel}
       >
-        <div className={classnames(styles.modal, { [styles.small]: small, [styles.large]: large })} onClick={stopPropagation}>
+        <div className={classnames(styles.modal, { [styles.small]: small, [styles.medium]: medium, [styles.large]: large })} onClick={stopPropagation}>
           {children}
         </div>
       </div>
@@ -61,6 +61,7 @@ Modal.propTypes = {
   onCancel: React.PropTypes.func.isRequired,
   children: React.PropTypes.node.isRequired,
   small: React.PropTypes.bool,
+  medium: React.PropTypes.bool,
   large: React.PropTypes.bool
 };
 
