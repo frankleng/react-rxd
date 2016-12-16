@@ -17,7 +17,7 @@
   },
   "main": "dist/",
   "license": "MIT",
-  "version": "1.1.20",
+  "version": "1.1.21",
   "dependencies": {
     "bourbon": "^4.2.7",
     "classnames": "^2.2.5",
