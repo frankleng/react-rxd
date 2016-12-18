@@ -3,7 +3,7 @@
  */
 const assign = require('lodash/assign');
 const React = require('react');
-const PropTypes = require('react').PropTypes;
+const PropTypes = React.PropTypes;
 const Grid = require('react-foundation-components/lib/grid-flex');
 const { getRowClassnameFromProps } = require('./helper');
 
