@@ -1,4 +1,5 @@
 const React = require('react');
+const Table = require('react-foundation-components/lib/table').default;
 const { getRestProps } = require('../utils');
 const classnames = require('classnames');
 
@@ -9,12 +10,12 @@ const propTypes = {
   className: React.PropTypes.string
 };
 
-const Table = props => (
-  <table className={classnames(styles.table, props.className)} {...getRestProps(props, propTypes)}>
+const RxdTable = props => (
+  <Table className={classnames(styles.table, props.className)} {...getRestProps(props, propTypes)}>
     {props.children}
-  </table>
+  </Table>
 );
 
-Table.propTypes = propTypes;
+RxdTable.propTypes = propTypes;
 
-export default Table;
+export default RxdTable;
