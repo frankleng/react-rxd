@@ -1,6 +1,11 @@
 @import "~bourbon/app/assets/stylesheets/bourbon";
-@import "~react-foundation-components/lib/typography";
 @import "colors";
+
+//FONT STACK
+$font-stack: 'Open Sans', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Helvetica Neue', 'Droid Sans', Helvetica, Arial, sans-serif;
+$body-font-family: $font-stack;
+$base-font-family: $font-stack;
+$header-font-family: $font-stack;
 
 //FORM
 $select-focus: $primary-color;
@@ -11,11 +16,6 @@ $button-background-focus: tint($primary-color, 4%) !default;
 //BASE TEXT COLORS
 $base-font-color: $grey-dark-4;
 $base-link-color: $primary-color;
-
-//FONT STACK
-$font-stack: 'OpenSans', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Helvetica Neue', 'Droid Sans', Helvetica, Arial, sans-serif;
-$base-font-family: $font-stack;
-$header-font-family: $font-stack;
 
 //FONT SIZES
 $base-font-size: 14px;
@@ -118,3 +118,5 @@ $card-image-hover-color: #F8F2B4;
 
 //Grid
 $gutter-width: 1.5rem !default;
+
+@import "~react-foundation-components/lib/typography";
