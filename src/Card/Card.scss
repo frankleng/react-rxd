@@ -1,9 +1,11 @@
 @import '../common';
 
+$boxShadowColor: rgba(145, 160, 170, 0.3);
+
 .card {
   background-color: $card-background;
   border-radius: $base-border-radius;
-  box-shadow:  0 6px 15px rgba(145, 160, 170, 0.3);
+  box-shadow: 0 6px 15px $boxShadowColor;
   flex-basis: 15em;
   flex-grow: 1;
   margin: 0 $card-margin $base-spacing $card-margin;
@@ -11,7 +13,7 @@
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    box-shadow: 0 1px 4px rgba($grey, 0.5);
+    box-shadow: 0 10px 15px $boxShadowColor;
   }
 
   &:global(.primary) {
