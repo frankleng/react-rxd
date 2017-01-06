@@ -17,13 +17,13 @@
   },
   "main": "dist/",
   "license": "MIT",
-  "version": "1.1.25",
+  "version": "1.2.0",
   "dependencies": {
     "bourbon": "^4.2.7",
     "classnames": "^2.2.5",
     "lodash": "^4.13.1",
     "node-bourbon": "^4.2.8",
-    "react": "^15.3.0",
+    "react": "^15.4.0",
     "react-foundation-components": "^0.12.0"
   },
   "devDependencies": {
