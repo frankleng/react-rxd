@@ -79,7 +79,7 @@ module.exports = {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract(
           'style',
-          'css?module&localIdentName=[name]_[local]!sass'
+          'css?module&localIdentName=[name]_[local]_[hash:base64:5]!sass'
         )
       }
     ]
