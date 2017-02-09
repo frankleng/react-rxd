@@ -1,11 +1,3 @@
-@import "~foundation-sites/_vendor/normalize-scss/sass/normalize";
-@import '~foundation-sites/_vendor/sassy-lists/stylesheets/helpers/missing-dependencies';
-@import '~foundation-sites/_vendor/sassy-lists/stylesheets/helpers/true';
-@import '~foundation-sites/_vendor/sassy-lists/stylesheets/functions/purge';
-@import '~foundation-sites/_vendor/sassy-lists/stylesheets/functions/remove';
-@import '~foundation-sites/_vendor/sassy-lists/stylesheets/functions/replace';
-@import '~foundation-sites/_vendor/sassy-lists/stylesheets/functions/to-list';
-
 @import "~bourbon/app/assets/stylesheets/bourbon";
 @import "./variables";
 @import "~react-foundation-components/lib/typography";
