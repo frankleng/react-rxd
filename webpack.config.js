@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
 
   externals : {
     react: 'react',
