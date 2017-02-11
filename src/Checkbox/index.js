@@ -14,7 +14,7 @@ const propTypes = {
 class Checkbox extends React.Component {
   state = {
     id: null
-  }
+  };
 
   componentWillMount() {
     const id = this.props.id || _.uniqueId('checkbox-');
