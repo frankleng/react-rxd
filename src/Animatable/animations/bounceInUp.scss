@@ -27,6 +27,6 @@
 }
 
 .bounceInUp {
-  composes: animated from "./_common.scss";
+  composes: animated;
   animation-name: bounceInUp;
 }

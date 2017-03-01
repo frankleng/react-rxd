@@ -11,7 +11,7 @@
 }
 
 .fadeInUp {
-  composes: animated from "./_common.scss";
+  composes: animated;
   animation-name: fadeInUp;
   animation-duration: 500ms;
 }
