@@ -25,6 +25,7 @@
 }
 
 .flipInY {
+  composes: animated;
   backface-visibility: visible !important;
   animation-name: flipInY;
 }

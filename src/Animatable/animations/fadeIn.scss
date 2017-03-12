@@ -1,0 +1,14 @@
+@keyframes :local(fadeIn) {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  composes: animated;
+  animation-name: fadeIn;
+}

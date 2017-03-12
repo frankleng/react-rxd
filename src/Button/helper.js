@@ -7,7 +7,7 @@ export { styles };
 const classnames = require('classnames');
 
 export function getButtonClassnameFromProps(props) {
-  const { primary, success, warning, info, danger, flat, fullWidth } = props;
+  const { primary, success, warning, info, danger, flat, fullWidth, plain } = props;
   const buttonClass = flat ? styles.btnFlat : styles.btn;
   return classnames({
     [buttonClass]: true,
@@ -18,6 +18,7 @@ export function getButtonClassnameFromProps(props) {
     warning,
     danger,
     info,
-    flat
+    flat,
+    plain
   });
 }

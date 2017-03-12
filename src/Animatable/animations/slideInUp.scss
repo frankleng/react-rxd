@@ -10,6 +10,6 @@
 }
 
 .slideInUp {
-  composes: animated from "./_common.scss";
+  composes: animated;
   animation-name: slideInUp;
 }

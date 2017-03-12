@@ -13,7 +13,7 @@
 }
 
 .shake {
-  composes: animated from "./_common.scss";
+  composes: animated;
   animation-name: shake;
   animation-duration: 650ms;
 }

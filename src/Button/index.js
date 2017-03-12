@@ -15,6 +15,7 @@ const propTypes = {
   info: React.PropTypes.bool,
   danger: React.PropTypes.bool,
   flat: React.PropTypes.bool,
+  plain: React.PropTypes.bool,
   children: React.PropTypes.node
 };
 

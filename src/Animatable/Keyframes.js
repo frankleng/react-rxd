@@ -2,21 +2,13 @@
  * Created by frank on 7/29/16.
  */
 const React = require('react');
-const styles = require('./KeyframesAnimations.scss');
-const classnames = require('classnames');
+const { getClassnamesFromProps } = require('./helpers');
 
 const AnimatableKeyframes = (props) => (
-  <div
-    className={classnames({
-      [styles[props.keyframeClass]]: props.shouldAnimate,
-      [props.className]: props.className
-    })}
-  >
+  <div className={getClassnamesFromProps(props)}>
     {props.children}
   </div>
 );
-
-AnimatableKeyframes.shouldComponentUpdate = () => true;
 
 AnimatableKeyframes.propTypes = {
   shouldAnimate: React.PropTypes.bool.isRequired,
@@ -30,7 +22,8 @@ AnimatableKeyframes.propTypes = {
     'fadeOutUp',
     'slideInUp',
     'bounceInUp',
-    'flipInY'
+    'flipInY',
+    'fadeIn'
   ]).isRequired
 };
 

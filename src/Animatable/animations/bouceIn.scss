@@ -32,7 +32,7 @@
 }
 
 .bounceIn {
-  composes: animated from "./_common.scss";
+  composes: animated;
   animation-name: bounceIn;
   animation-duration: 1s;
 }
