@@ -24,16 +24,15 @@
   overflow: hidden;
 }
 
-.modalOverlay {
+.container {
   position: fixed;
+  z-index: 1060;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1000;
-
+  overflow-y: auto;
   transition: opacity 0.2s ease;
-  background: rgba(2, 12, 19, 0.75);
 
   display: none;
 
@@ -61,7 +60,8 @@
   border-radius: $base-border-radius;
   box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.1);
   margin: 60px auto;
-
+  z-index: 1050;
+  position: relative;
   background-color: #ffffff;
 
   transition: transform 0.2s ease;
@@ -87,40 +87,13 @@
   width: 100%;
 }
 
-.modalBody {
-  overflow-y: scroll;
-  max-height: 70vh;
-}
-
 .modalHeader {
-  background-color: $grey-light-5;
-  border-bottom: 1px solid $grey-light-4;
   position: relative;
 
-  h3 {
+  h4 {
     color: $grey-dark-5;
     font-weight: $font-weight-regular;
     line-height: $base-line-height;
-  }
-
-  button {
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    height: 30px;
-    width: 30px;
-    margin-top: -15px;
-    cursor: pointer;
-    padding: 0;
-
-    &:hover {
-      background-color: $grey-light-4;
-    }
-  }
-
-  img {
-    width: 15px;
-    height: 12.5px;
   }
 }
 
@@ -132,4 +105,28 @@
   button:not(:last-child) {
     margin-right: 10px;
   }
+}
+
+.closeModal {
+  font-size: 20px;
+  color: $grey-light-4;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  cursor: pointer;
+
+  &:hover {
+    color: black;
+  }
+}
+
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #FFFFFF;
+  opacity: .6;
 }

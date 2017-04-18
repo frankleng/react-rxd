@@ -2,12 +2,16 @@ const React = require('react');
 const classnames = require('classnames');
 
 const styles = require('./Modal.scss');
-const closeIcon = require('./close-icon.svg');
+
+const stopPropagation = (e) => e.stopPropagation();
 
 class Modal extends React.Component {
-  state = {
-    show: false
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      show: false
+    };
+  }
 
   componentDidMount() {
     window.addEventListener('keydown', this.handleKeyDown);
@@ -40,15 +44,13 @@ class Modal extends React.Component {
   };
 
   render() {
-    const { onCancel, children, small, medium, large } = this.props;
-
-    const stopPropagation = (e) => e.stopPropagation();
-
+    const { onCancel, children, small, medium, large, noBackdrop } = this.props;
     return (
       <div
-        className={classnames(styles.modalOverlay, { [styles.show]: this.state.show, [styles.hiding]: this.state.hiding })}
+        className={classnames(styles.container, { [styles.show]: this.state.show, [styles.hiding]: this.state.hiding })}
         onClick={onCancel}
       >
+        {!noBackdrop && <div className={styles.modalBackdrop} />}
         <div className={classnames(styles.modal, { [styles.small]: small, [styles.medium]: medium, [styles.large]: large })} onClick={stopPropagation}>
           {children}
         </div>
@@ -62,13 +64,14 @@ Modal.propTypes = {
   children: React.PropTypes.node.isRequired,
   small: React.PropTypes.bool,
   medium: React.PropTypes.bool,
-  large: React.PropTypes.bool
+  large: React.PropTypes.bool,
+  noBackdrop: React.PropTypes.bool
 };
 
 export const Header = ({ children, onCancel }) => (
   <div className={styles.modalHeader}>
-    <h3>{children}</h3>
-    <button onClick={onCancel}><img src={closeIcon} role="presentation" /></button>
+    <h4>{children}</h4>
+    <div className={styles.closeModal} onClick={onCancel}>&#10005;</div>
   </div>
 );
 

@@ -7,7 +7,10 @@ const PropTypes = React.PropTypes;
 const Grid = require('react-foundation-components/lib/grid-flex');
 const { getRowClassnameFromProps } = require('./helper');
 
-Grid.Column.propTypes = assign({
+const Column = Grid.Column;
+const Row = Grid.Row;
+
+Column.propTypes = assign({
 
   small: PropTypes.number,
   medium: PropTypes.number,
@@ -37,7 +40,7 @@ Grid.Column.propTypes = assign({
   expand: PropTypes.string
 
 }, Grid.Column.propTypes);
-Grid.Row.propTypes = assign({
+Row.propTypes = assign({
 
   expanded: PropTypes.bool,
   unstack: PropTypes.string,
@@ -55,25 +58,23 @@ Grid.Row.propTypes = assign({
 
 }, Grid.Column.propTypes);
 
-const Row = (props) => {
+const RealstaxRow = (props) => {
   const { fullWidth, className, noGutter, ...rest } = props;
   return (
-    <Grid.Row
+    <Row
       className={getRowClassnameFromProps({ fullWidth, className, noGutter })}
       {...rest}
     />
   );
 };
 
-Row.propTypes = {
+RealstaxRow.propTypes = {
   fullWidth: PropTypes.bool,
   noGutter: PropTypes.bool,
   className: PropTypes.string
 };
 
-const Column = Grid.Column;
-
 module.exports = {
-  Row,
+  Row: RealstaxRow,
   Column
 };
