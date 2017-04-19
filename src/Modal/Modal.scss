@@ -20,8 +20,15 @@
   }
 }
 
-.disableScroll {
+.modalOpened {
   overflow: hidden;
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
+  filter: blur(4px);
+  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
+  background-image: url("./blur.svg");
 }
 
 .container {
