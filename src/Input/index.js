@@ -61,14 +61,4 @@ class Input extends React.Component {
 
 Input.propTypes = propTypes;
 
-
-// Workaround to get a ref to a stateless component
-// See the note under https://facebook.github.io/react/docs/reusable-components.html#stateless-functions
-export class StatefulInput extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  render() {
-    return (<Input {...this.props} />);
-  }
-}
-StatefulInput.propTypes = propTypes;
-
 export default Input;

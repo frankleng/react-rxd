@@ -94,13 +94,22 @@
   width: 100%;
 }
 
+.modalBody {
+  font-size: 14px;
+  input, textarea {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
 .modalHeader {
   position: relative;
 
   h4 {
     color: $grey-dark-5;
-    font-weight: $font-weight-regular;
-    line-height: $base-line-height;
+    font-weight: 600;
+    line-height: 22px;
+    font-size: 22px
   }
 }
 
@@ -115,8 +124,9 @@
 }
 
 .closeModal {
-  font-size: 20px;
-  color: $grey-light-4;
+  font-size: 22px;
+  line-height: 22px;
+  color: #9B9B9B;
   position: absolute;
   top: 1em;
   right: 1em;
@@ -128,6 +138,7 @@
 }
 
 .modalBackdrop {
+  composes: modalOpened;
   position: fixed;
   top: 0;
   right: 0;

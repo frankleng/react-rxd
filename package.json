@@ -17,7 +17,7 @@
   },
   "main": "dist/",
   "license": "MIT",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "dependencies": {
     "node-bourbon": "^4.2.8"
   },
