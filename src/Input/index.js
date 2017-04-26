@@ -12,30 +12,53 @@ const propTypes = {
   disabled: React.PropTypes.bool,
   isValid: React.PropTypes.bool,
   isInvalid: React.PropTypes.bool,
-  refInput: React.PropTypes.func
+  refInput: React.PropTypes.func,
+  onChange: React.PropTypes.func,
+  onFocus: React.PropTypes.func,
+  onBlur: React.PropTypes.func,
+  value: React.PropTypes.any
 };
 
-const Input = (props) => {
-  const classNamesFromProps = helper.getInputClassnameFromProps(props);
-  const type = props.type || 'text';
-  return (<input
-    className={classNamesFromProps}
-    placeholder={props.placeholder}
-    type={type}
-    ref={props.refInput}
-    {...getRestProps(props, propTypes)}
-  />);
-};
-
-Input.propTypes = propTypes;
-
-// Workaround to get a ref to a stateless component
-// See the note under https://facebook.github.io/react/docs/reusable-components.html#stateless-functions
-export class StatefulInput extends React.Component { // eslint-disable-line react/prefer-stateless-function
+class Input extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isFocused: false,
+      currentValue: this.props.value
+    };
+  }
+  componentWillReceiveProps(nextProps) {
+    if (!this.state.isFocused) this.setState({ currentValue: nextProps.value });
+  }
+  handleChange = (e) => {
+    this.setState({ currentValue: e.target.value });
+    if (this.props.onChange) this.props.onChange(e);
+  };
+  handleFocus = (e) => {
+    this.setState({ isFocused: true });
+    if (this.props.onFocus) this.props.onFocus(e);
+  };
+  handleBlur = (e) => {
+    this.setState({ isFocused: false });
+    if (this.props.onBlur) this.props.onBlur(e);
+  };
   render() {
-    return (<Input {...this.props} />);
+    const classNamesFromProps = helper.getInputClassnameFromProps(this.props);
+    const type = this.props.type || 'text';
+    return (<input
+      className={classNamesFromProps}
+      placeholder={this.props.placeholder}
+      type={type}
+      ref={this.props.refInput}
+      {...getRestProps(this.props, propTypes)}
+      onChange={this.handleChange}
+      onFocus={this.handleFocus}
+      onBlur={this.handleBlur}
+      value={this.state.currentValue}
+    />);
   }
 }
-StatefulInput.propTypes = propTypes;
+
+Input.propTypes = propTypes;
 
 export default Input;

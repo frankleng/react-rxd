@@ -1,5 +1,6 @@
 @import "../common";
-
+@import "../Visibility/Visibility";
+$headerFooterHeight: 69px;
 @keyframes modal-overlay-open {
   from {
     opacity: 0;
@@ -20,20 +21,31 @@
   }
 }
 
-.disableScroll {
+.modalOpened {
   overflow: hidden;
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
+  filter: blur(4px);
+  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
+  background-image: url("./blur.svg");
 }
 
-.modalOverlay {
+.container {
+  // Only apply to small - full screen modal
+  @include breakpoint(small only) {
+    bottom: $headerFooterHeight !important;
+    overflow-y: visible !important;
+  }
   position: fixed;
+  z-index: 1060;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1000;
-
+  overflow-y: auto;
   transition: opacity 0.2s ease;
-  background: rgba(2, 12, 19, 0.75);
 
   display: none;
 
@@ -60,9 +72,18 @@
   border: 1px solid $grey-light-4;
   border-radius: $base-border-radius;
   box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.1);
-  margin: 60px auto;
-
+  z-index: 1050;
   background-color: #ffffff;
+
+  margin: 0 auto;
+  max-width: 568px;
+  width: 100%;
+
+  // Only apply to small - full screen modal
+  @include breakpoint(small only) {
+    max-width: 100% !important;
+    height: 100vh !important;
+  }
 
   transition: transform 0.2s ease;
 
@@ -83,44 +104,41 @@
 }
 
 .modalHeader, .modalBody {
-  padding: 20px;
   width: 100%;
 }
-
 .modalBody {
-  overflow-y: scroll;
-  max-height: 70vh;
+  padding: 0;
+  font-size: 14px;
+  input, textarea {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  max-height: 50vh;
+  // Only apply to small - full screen modal
+  @include breakpoint(small only) {
+    height: 100% !important;
+    max-height: 100% !important;
+    position: absolute !important;
+    background: white !important;
+    padding-bottom: $headerFooterHeight !important;
+  }
+}
+
+.modalHeader, .modalFooter {
+  padding: 20px;
+  height: $headerFooterHeight;
 }
 
 .modalHeader {
-  background-color: $grey-light-5;
-  border-bottom: 1px solid $grey-light-4;
   position: relative;
 
-  h3 {
+  h4 {
     color: $grey-dark-5;
-    font-weight: $font-weight-regular;
-    line-height: $base-line-height;
-  }
-
-  button {
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    height: 30px;
-    width: 30px;
-    margin-top: -15px;
-    cursor: pointer;
-    padding: 0;
-
-    &:hover {
-      background-color: $grey-light-4;
-    }
-  }
-
-  img {
-    width: 15px;
-    height: 12.5px;
+    font-weight: 600;
+    line-height: 22px;
+    font-size: 22px
   }
 }
 
@@ -132,4 +150,53 @@
   button:not(:last-child) {
     margin-right: 10px;
   }
+
+  // Only apply to small - full screen modal
+  @include breakpoint(small only) {
+    position: fixed;
+    text-align: center !important;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: white;
+  }
+}
+
+.closeModal {
+  font-size: 22px;
+  line-height: 22px;
+  color: #9B9B9B;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  cursor: pointer;
+
+  &:hover {
+    color: black;
+  }
+}
+
+.modalBackdrop {
+  composes: modalOpened;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #FFFFFF;
+  opacity: .6;
+}
+
+.modalInnerContainer {
+  display: table !important;
+  width: 100% !important;
+  @include breakpoint(medium) {
+    height: 100% !important;
+  }
+}
+
+.centeringContainer {
+  display: table-cell !important;
+  vertical-align: middle !important;
 }

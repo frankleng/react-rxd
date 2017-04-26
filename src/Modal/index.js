@@ -2,12 +2,16 @@ const React = require('react');
 const classnames = require('classnames');
 
 const styles = require('./Modal.scss');
-const closeIcon = require('./close-icon.svg');
+
+const stopPropagation = (e) => e.stopPropagation();
 
 class Modal extends React.Component {
-  state = {
-    show: false
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      show: false
+    };
+  }
 
   componentDidMount() {
     window.addEventListener('keydown', this.handleKeyDown);
@@ -16,13 +20,13 @@ class Modal extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.show !== this.state.show) {
       if (nextProps.show) {
-        document.body.classList.add(styles.disableScroll);
+        document.body.style.overflow = 'hidden';
         this.setState({ show: nextProps.show });
       } else {
         this.setState({ hiding: true });
 
         window.setTimeout(() => {
-          document.body.classList.remove(styles.disableScroll);
+          document.body.style.overflow = '';
           this.setState({ hiding: false, show: false });
         }, 0.2 * 1000);
       }
@@ -41,16 +45,17 @@ class Modal extends React.Component {
 
   render() {
     const { onCancel, children, small, medium, large } = this.props;
-
-    const stopPropagation = (e) => e.stopPropagation();
-
     return (
       <div
-        className={classnames(styles.modalOverlay, { [styles.show]: this.state.show, [styles.hiding]: this.state.hiding })}
+        className={classnames(styles.container, { [styles.show]: this.state.show, [styles.hiding]: this.state.hiding })}
         onClick={onCancel}
       >
-        <div className={classnames(styles.modal, { [styles.small]: small, [styles.medium]: medium, [styles.large]: large })} onClick={stopPropagation}>
-          {children}
+        <div className={styles.modalInnerContainer}>
+          <div className={styles.centeringContainer}>
+            <div className={classnames(styles.modal, { [styles.small]: small, [styles.medium]: medium, [styles.large]: large })} onClick={stopPropagation}>
+              {children}
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -67,8 +72,8 @@ Modal.propTypes = {
 
 export const Header = ({ children, onCancel }) => (
   <div className={styles.modalHeader}>
-    <h3>{children}</h3>
-    <button onClick={onCancel}><img src={closeIcon} role="presentation" /></button>
+    <h4>{children}</h4>
+    <div className={styles.closeModal} onClick={onCancel}>&#10005;</div>
   </div>
 );
 
@@ -96,6 +101,17 @@ export const Footer = ({ children }) => (
 
 Footer.propTypes = {
   children: React.PropTypes.node.isRequired
+};
+
+export const BlurBackdropContainer = ({ children, show }) => (
+  <div className={classnames({ [styles.modalBackdrop]: show })}>
+    {children}
+  </div>
+);
+
+BlurBackdropContainer.propTypes = {
+  children: React.PropTypes.node.isRequired,
+  show: React.PropTypes.bool
 };
 
 export default Modal;
