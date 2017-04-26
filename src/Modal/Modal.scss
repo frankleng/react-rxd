@@ -1,5 +1,6 @@
 @import "../common";
-
+@import "../Visibility/Visibility";
+$headerFooterHeight: 69px;
 @keyframes modal-overlay-open {
   from {
     opacity: 0;
@@ -32,6 +33,11 @@
 }
 
 .container {
+  // Only apply to small - full screen modal
+  @include breakpoint(small only) {
+    bottom: $headerFooterHeight !important;
+    overflow-y: visible !important;
+  }
   position: fixed;
   z-index: 1060;
   top: 0;
@@ -66,10 +72,18 @@
   border: 1px solid $grey-light-4;
   border-radius: $base-border-radius;
   box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.1);
-  margin: 60px auto;
   z-index: 1050;
-  position: relative;
   background-color: #ffffff;
+
+  margin: 0 auto;
+  max-width: 568px;
+  width: 100%;
+
+  // Only apply to small - full screen modal
+  @include breakpoint(small only) {
+    max-width: 100% !important;
+    height: 100vh !important;
+  }
 
   transition: transform 0.2s ease;
 
@@ -93,13 +107,25 @@
   padding: 20px;
   width: 100%;
 }
-
 .modalBody {
   font-size: 14px;
   input, textarea {
     font-size: 16px;
     font-weight: 600;
   }
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  height: 50vh;
+  // Only apply to small - full screen modal
+  @include breakpoint(small only) {
+    height: 100%;
+    position: absolute;
+    background: white;
+  }
+}
+
+.modalHeader, .modalFooter {
+  height: $headerFooterHeight;
 }
 
 .modalHeader {
@@ -120,6 +146,16 @@
 
   button:not(:last-child) {
     margin-right: 10px;
+  }
+
+  // Only apply to small - full screen modal
+  @include breakpoint(small only) {
+    position: fixed;
+    text-align: center !important;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: white;
   }
 }
 
@@ -147,4 +183,17 @@
   z-index: 1040;
   background-color: #FFFFFF;
   opacity: .6;
+}
+
+.modalInnerContainer {
+  display: table !important;
+  width: 100% !important;
+  @include breakpoint(medium) {
+    height: 100% !important;
+  }
+}
+
+.centeringContainer {
+  display: table-cell !important;
+  vertical-align: middle !important;
 }

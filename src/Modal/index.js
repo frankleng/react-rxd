@@ -50,8 +50,12 @@ class Modal extends React.Component {
         className={classnames(styles.container, { [styles.show]: this.state.show, [styles.hiding]: this.state.hiding })}
         onClick={onCancel}
       >
-        <div className={classnames(styles.modal, { [styles.small]: small, [styles.medium]: medium, [styles.large]: large })} onClick={stopPropagation}>
-          {children}
+        <div className={styles.modalInnerContainer}>
+          <div className={styles.centeringContainer}>
+            <div className={classnames(styles.modal, { [styles.small]: small, [styles.medium]: medium, [styles.large]: large })} onClick={stopPropagation}>
+              {children}
+            </div>
+          </div>
         </div>
       </div>
     );
