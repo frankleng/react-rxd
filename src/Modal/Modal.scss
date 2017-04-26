@@ -104,10 +104,10 @@ $headerFooterHeight: 69px;
 }
 
 .modalHeader, .modalBody {
-  padding: 20px;
   width: 100%;
 }
 .modalBody {
+  padding: 0;
   font-size: 14px;
   input, textarea {
     font-size: 16px;
@@ -115,16 +115,19 @@ $headerFooterHeight: 69px;
   }
   overflow-y: auto !important;
   -webkit-overflow-scrolling: touch !important;
-  height: 50vh;
+  max-height: 50vh;
   // Only apply to small - full screen modal
   @include breakpoint(small only) {
-    height: 100%;
-    position: absolute;
-    background: white;
+    height: 100% !important;
+    max-height: 100% !important;
+    position: absolute !important;
+    background: white !important;
+    padding-bottom: $headerFooterHeight !important;
   }
 }
 
 .modalHeader, .modalFooter {
+  padding: 20px;
   height: $headerFooterHeight;
 }
 
