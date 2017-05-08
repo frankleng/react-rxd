@@ -87,9 +87,14 @@ $headerFooterHeight: 69px;
 
   transition: transform 0.2s ease;
 
-  &.small {
+  &.micro {
     width: 100%;
     max-width: 20em;
+  }
+
+  &.small {
+    width: 100%;
+    max-width: 30em;
   }
 
   &.medium {
@@ -98,6 +103,11 @@ $headerFooterHeight: 69px;
   }
 
   &.large {
+    width: 100%;
+    max-width: 50em;
+  }
+
+  &.huge {
     width: 100%;
     max-width: 60em;
   }

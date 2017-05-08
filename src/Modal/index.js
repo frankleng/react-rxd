@@ -44,7 +44,14 @@ class Modal extends React.Component {
   };
 
   render() {
-    const { onCancel, children, small, medium, large } = this.props;
+    const { onCancel, children, micro, small, medium, large, huge } = this.props;
+    const sizeClassnames = {
+      [styles.micro]: micro,
+      [styles.small]: small,
+      [styles.medium]: medium,
+      [styles.large]: large,
+      [styles.huge]: huge
+    };
     return (
       <div
         className={classnames(styles.container, { [styles.show]: this.state.show, [styles.hiding]: this.state.hiding })}
@@ -52,7 +59,7 @@ class Modal extends React.Component {
       >
         <div className={styles.modalInnerContainer}>
           <div className={styles.centeringContainer}>
-            <div className={classnames(styles.modal, { [styles.small]: small, [styles.medium]: medium, [styles.large]: large })} onClick={stopPropagation}>
+            <div className={classnames(styles.modal, { ...sizeClassnames })} onClick={stopPropagation}>
               {children}
             </div>
           </div>
@@ -65,9 +72,11 @@ class Modal extends React.Component {
 Modal.propTypes = {
   onCancel: React.PropTypes.func.isRequired,
   children: React.PropTypes.node.isRequired,
+  micro: React.PropTypes.bool,
   small: React.PropTypes.bool,
   medium: React.PropTypes.bool,
-  large: React.PropTypes.bool
+  large: React.PropTypes.bool,
+  huge: React.PropTypes.bool
 };
 
 export const Header = ({ children, onCancel }) => (
