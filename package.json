@@ -17,8 +17,9 @@
   },
   "main": "dist/",
   "license": "MIT",
-  "version": "1.4.3",
+  "version": "1.4.5",
   "dependencies": {
+    "bodymovin": "^4.6.8",
     "node-bourbon": "^4.2.8"
   },
   "devDependencies": {
