@@ -11,6 +11,8 @@ class ReactBodymovin extends React.Component {
     options.wrapper = this.wrapper;
     options.renderer = 'svg';
     this.animation = loadAnimation(options);
+    // run animation callback once it's available to be modified
+    if (this.props.onAnimate && this.animation) this.props.onAnimate(this.animation);
   }
   shouldComponentUpdate() {
     return false;
@@ -27,7 +29,8 @@ class ReactBodymovin extends React.Component {
 }
 
 ReactBodymovin.propTypes = {
-  options: React.PropTypes.object // see https://github.com/bodymovin/bodymovin
+  options: React.PropTypes.object, // see https://github.com/bodymovin/bodymovin
+  onAnimate: React.PropTypes.func
 };
 
 module.exports = ReactBodymovin;
