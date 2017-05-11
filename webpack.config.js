@@ -18,6 +18,7 @@ module.exports = {
     Avatar: './src/Avatar/index.js',
     Background: './src/Background/index.js',
     Badge: './src/Badge/index.js',
+    BoxAlignment: './src/BoxAlignment/index.js',
     Button: './src/Button/index.js',
     Card: './src/Card/index.js',
     Checkbox: './src/Checkbox/index.js',
