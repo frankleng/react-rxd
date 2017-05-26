@@ -18,6 +18,7 @@ module.exports = {
     Avatar: './src/Avatar/index.js',
     Background: './src/Background/index.js',
     Badge: './src/Badge/index.js',
+    Bodymovin: './src/Animatable/Bodymovin.js', // explicit entry until https://github.com/webpack/webpack/issues/2867 is resolved
     BoxAlignment: './src/BoxAlignment/index.js',
     Button: './src/Button/index.js',
     Card: './src/Card/index.js',
