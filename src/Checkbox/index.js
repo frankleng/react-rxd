@@ -13,13 +13,8 @@ const propTypes = {
 
 class Checkbox extends React.Component {
   state = {
-    id: null
+    id: this.props.id || _.uniqueId('checkbox-')
   };
-
-  componentWillMount() {
-    const id = this.props.id || _.uniqueId('checkbox-');
-    this.setState({ id });
-  }
 
   render() {
     const { checked, onChange, children } = this.props;

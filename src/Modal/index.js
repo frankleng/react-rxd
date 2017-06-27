@@ -79,20 +79,23 @@ Modal.propTypes = {
   huge: React.PropTypes.bool
 };
 
-export const Header = ({ children, onCancel }) => (
-  <div className={styles.modalHeader}>
+export const Header = ({ children, onCancel, className, ...rest }) => (
+  <div className={`${styles.modalHeader}  ${className || ''}`} {...rest}>
     <h4>{children}</h4>
-    <div className={styles.closeModal} onClick={onCancel}>&#10005;</div>
+    {
+      onCancel && <div className={styles.closeModal} onClick={onCancel}>&#10005;</div>
+    }
   </div>
 );
 
 Header.propTypes = {
   children: React.PropTypes.node.isRequired,
-  onCancel: React.PropTypes.func.isRequired
+  onCancel: React.PropTypes.func,
+  className: React.PropTypes.string
 };
 
-export const Body = ({ children, className }) => (
-  <div className={`${styles.modalBody}  ${className || ''}`}>
+export const Body = ({ children, className, ...rest }) => (
+  <div className={`${styles.modalBody}  ${className || ''}`} {...rest}>
     {children}
   </div>
 );
@@ -102,14 +105,15 @@ Body.propTypes = {
   className: React.PropTypes.string
 };
 
-export const Footer = ({ children }) => (
-  <div className={styles.modalFooter}>
+export const Footer = ({ children, className, ...rest }) => (
+  <div className={`${styles.modalFooter}  ${className || ''}`} {...rest}>
     {children}
   </div>
 );
 
 Footer.propTypes = {
-  children: React.PropTypes.node.isRequired
+  children: React.PropTypes.node.isRequired,
+  className: React.PropTypes.string
 };
 
 export const BlurBackdropContainer = ({ children, show }) => (
