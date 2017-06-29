@@ -24,7 +24,7 @@ class Input extends React.Component {
     super(props);
     this.state = {
       isFocused: false,
-      currentValue: this.props.value
+      currentValue: props.value
     };
   }
   componentWillReceiveProps(nextProps) {
@@ -54,7 +54,7 @@ class Input extends React.Component {
       onChange={this.handleChange}
       onFocus={this.handleFocus}
       onBlur={this.handleBlur}
-      value={this.props.value || this.state.currentValue}
+      value={this.state.currentValue}
     />);
   }
 }
