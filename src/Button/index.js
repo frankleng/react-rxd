@@ -10,6 +10,7 @@ const propTypes = {
   disabled: React.PropTypes.bool,
   primary: React.PropTypes.bool,
   fullWidth: React.PropTypes.bool,
+  truncate: React.PropTypes.bool,
   success: React.PropTypes.bool,
   warning: React.PropTypes.bool,
   info: React.PropTypes.bool,

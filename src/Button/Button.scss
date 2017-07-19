@@ -192,3 +192,9 @@
 .fullWidth {
   width: 100%;
 }
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
