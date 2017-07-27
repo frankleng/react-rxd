@@ -1081,9 +1081,9 @@ body-parser@^1.12.4:
     raw-body "~2.2.0"
     type-is "~1.6.14"
 
-bodymovin@^4.6.8:
-  version "4.6.8"
-  resolved "https://registry.yarnpkg.com/bodymovin/-/bodymovin-4.6.8.tgz#84ffa76a8684efedf5989f8d670df1634c6522d7"
+bodymovin@^4.9.0:
+  version "4.9.0"
+  resolved "https://registry.yarnpkg.com/bodymovin/-/bodymovin-4.9.0.tgz#70c4263a380286ced1542e6053e9ea10d155ab09"
 
 boolbase@~1.0.0:
   version "1.0.0"

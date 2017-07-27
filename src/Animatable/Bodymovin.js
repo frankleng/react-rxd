@@ -3,7 +3,7 @@
  */
 const React = require('react');
 const loadAnimation = typeof window !== 'undefined' ?
-  require('bodymovin/build/player/bodymovin_light').loadAnimation : () => {}; // eslint-disable-line
+  require('bodymovin/build/player/bodymovin_light.min').loadAnimation : () => {}; // eslint-disable-line
 
 class ReactBodymovin extends React.Component {
   componentDidMount() {
