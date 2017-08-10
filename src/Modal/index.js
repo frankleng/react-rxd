@@ -9,7 +9,7 @@ class Modal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      show: false
+      show: !!props.show
     };
   }
 
@@ -76,7 +76,8 @@ Modal.propTypes = {
   small: React.PropTypes.bool,
   medium: React.PropTypes.bool,
   large: React.PropTypes.bool,
-  huge: React.PropTypes.bool
+  huge: React.PropTypes.bool,
+  show: React.PropTypes.bool
 };
 
 export const Header = ({ children, onCancel, className, ...rest }) => (
